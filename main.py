@@ -128,13 +128,16 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags):
         for tag in tags:
             if f'{tag}, {w}' in emiss_mat:
                 prob = emiss_mat[f'{tag}, {w}']
+                print(f'{result[-1]}, {tag}')
                 if f'{result[-1]}, {tag}' in trans_mat:
                     prob = prob * trans_mat[f'{result[-1]}, {tag}']
                     if prob > max_prob:
                         max_prob = prob
                         max_prob_tag = tag
+            else:
+                print(f'{tag}, {w} not in emiss_mat')
         if max_prob_tag == '':
-            max_prob_tag = '<UNK>'
+            max_prob_tag = 'PROPN'
         result.append(max_prob_tag)
     result.append('<EOL>')
     return result
@@ -145,7 +148,7 @@ def main():
     total_counts = count_occurrences(Path('UD-Data'))
     trans_mat = calculate_transition_probs(total_counts["English"]["tags"], total_counts["English"]["transitions"])
     emission_mat = calculate_emission_probs(total_counts["English"]["tags"], total_counts["English"]["emissions"])
-    res = predict_tags('I saw a cat', trans_mat, emission_mat, total_counts["English"]["tags"].keys())
+    res = predict_tags('i love your cat so much', trans_mat, emission_mat, total_counts["English"]["tags"].keys())
     print(res)
 if __name__ == "__main__":
     main()
