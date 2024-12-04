@@ -44,7 +44,7 @@ def count_occurrences(corpus):
             total_counts[lang] = counts
 
         with open(output_path, 'w', encoding='utf-8') as output_file:
-            json.dump(total_counts, output_file, indent=4)
+            json.dump(total_counts, output_file, ensure_ascii=False, indent=4)
 
     return total_counts
 
@@ -57,7 +57,7 @@ def calculate_emission_probs(tagprobs, wordtagprobs):
     :param wordtagprobs: json of probabilities of a word given the tag
     :return: emission probabilites
     """
-    pass
+
 
 
 def calculate_transition_probs(tagprobs, tagtagprobs):
