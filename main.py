@@ -75,7 +75,7 @@ def calculate_emission_probs(tag_counts: dict, tag_word_counts: dict):
         prob = counts/count_of_tag  # counts(tag, word)/counts(tag)
         emission_probs[key] = prob
 
-    with open("emission_mat.json", "w") as archivo:
+    with open("data/emission_mat.json", "w") as archivo:
         json.dump(emission_probs, archivo, ensure_ascii=False, indent=4)
     return emission_probs
 
@@ -98,12 +98,20 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict):
         prob = counts / prev_tag_count
         trans_mat[tag1_tag2] = prob
 
-    with open("trans_mat.json", "w") as archivo:
+    with open("data/trans_mat.json", "w") as archivo:
         json.dump(trans_mat, archivo, ensure_ascii=False, indent=4)
     return trans_mat
 
+def evaluate_model(input_path, lang='English'):
+    """
+    Evaluate the model with the test data
+    :param input_path: path to the test data
+    :param lang: language of the data
+    :return: accuracy of the model
+    """
+    pass
 
-def predict_tags(sentence, trans_mat, emiss_mat):
+def predict_tags(sentence, trans_mat, emiss_mat, tags):
     """
     Predict the most probability tags for the sentence
     :param sentence: sentence to be predicted
@@ -112,14 +120,32 @@ def predict_tags(sentence, trans_mat, emiss_mat):
     :return: transition probabilities for that tag
     """
 
-    pass
+    words = sentence.replace('.', '').split(' ')
+    result = ['<BOL>']
+    for w in words:
+        max_prob = 0
+        max_prob_tag = ''
+        for tag in tags:
+            if f'{tag}, {w}' in emiss_mat:
+                prob = emiss_mat[f'{tag}, {w}']
+                if f'{result[-1]}, {tag}' in trans_mat:
+                    prob = prob * trans_mat[f'{result[-1]}, {tag}']
+                    if prob > max_prob:
+                        max_prob = prob
+                        max_prob_tag = tag
+        if max_prob_tag == '':
+            max_prob_tag = '<UNK>'
+        result.append(max_prob_tag)
+    result.append('<EOL>')
+    return result
+
 
 
 def main():
     total_counts = count_occurrences(Path('UD-Data'))
     trans_mat = calculate_transition_probs(total_counts["English"]["tags"], total_counts["English"]["transitions"])
     emission_mat = calculate_emission_probs(total_counts["English"]["tags"], total_counts["English"]["emissions"])
-
-
+    res = predict_tags('I saw a cat', trans_mat, emission_mat, total_counts["English"]["tags"].keys())
+    print(res)
 if __name__ == "__main__":
     main()
