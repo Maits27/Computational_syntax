@@ -60,18 +60,42 @@ def calculate_emission_probs(tagprobs, wordtagprobs):
 
 
 
-def calculate_transition_probs(tagprobs, tagtagprobs):
+def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict):
     """
     Calculates the transition probs and saves it on a file if the file doesn't exist
     :param tagprobs: json of prob of tags
     :param tagtagprobs: json of prob of tagtag
     :return: transition probabilities for that tag
     """
+    #creamos matriz de transiciones
+    trans_mat = {}
+    #recorrer todas las posibles tagtagprobs
+    for tag1_tag2,counts in tag_tag_counts.items():
+        #print(tag1_tag2, counts)
+        prev_tag, current_tag = tag1_tag2.split(", ")
+        prev_tag_count = tag_counts.get(f"{prev_tag}")
+
+        prob = counts/prev_tag_count
+        trans_mat[tag1_tag2] = prob
+
+    with open("trans_mat.json", "w") as archivo:
+        json.dump(trans_mat, archivo, ensure_ascii=False, indent=4)
+    return trans_mat
+
+def predict_tags(sentence, trans_mat, emiss_mat):
+    """
+    Predict the most probability tags for the sentence
+    :param sentence: sentence to be predicted
+    :param trans_mat: matrix of prob of transitions
+    :param emiss_mat: matrix of prob of emission
+    :return: transition probabilities for that tag
+    """
+
     pass
 
-
 def main():
-    count_occurrences(Path('UD-Data'))
+    total_counts = count_occurrences(Path('UD-Data'))
+    trans_mat = calculate_transition_probs(total_counts["English"]["tags"], total_counts["English"]["transitions"])
 
 
 if __name__ == "__main__":
