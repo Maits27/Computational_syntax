@@ -120,7 +120,7 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags):
     :return: transition probabilities for that tag
     """
 
-    words = sentence.replace('.', '').split(' ')
+    words = sentence.replace('.', '').lower().split(' ')
     result = ['<BOL>']
     for w in words:
         max_prob = 0
