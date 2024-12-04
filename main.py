@@ -12,7 +12,7 @@ def count_occurrences(corpus):
     :return: returns a json with the counts ({tags:{...}, ...})
     """
     total_counts = {'English': {}, 'Spanish': {}}
-    output_path = Path('UD-Data/data/counts.json')
+    output_path = Path('data/counts.json')
 
     if output_path.exists():
         with open(output_path, 'r', encoding='utf-8') as f:
