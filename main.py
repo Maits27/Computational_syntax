@@ -19,7 +19,7 @@ def count_occurrences(corpus):
             total_counts = json.load(f)
     else:
         for lang in total_counts:
-            counts = {'transitions': {}, 'emissions': {}, 'tags': {'*': 1}}
+            counts = {'transitions': {}, 'emissions': {}, 'tags': {'<BOL>': 1}}
             with open(glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))[0], 'r', encoding='utf-8') as f:
                 tag = '<BOL>'
                 for line in f:
