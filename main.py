@@ -19,6 +19,7 @@ def count_occurrences(corpus):
         with open(output_path, 'r', encoding='utf-8') as f:
             total_counts = json.load(f)
     else:
+        os.mkdir('data')
         for lang in total_counts:
             counts = {'transitions': {}, 'emissions': {}, 'tags': {'<BOL>': 1}}
             with open(glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))[0], 'r', encoding='utf-8') as f:
@@ -102,16 +103,34 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict):
         json.dump(trans_mat, archivo, ensure_ascii=False, indent=4)
     return trans_mat
 
-def evaluate_model(input_path, lang='English'):
+def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English'):
     """
     Evaluate the model with the test data
     :param input_path: path to the test data
     :param lang: language of the data
     :return: accuracy of the model
     """
-    pass
+    if not Path('output').exists():
+        os.mkdir('output')
+    with open(glob.glob(os.path.join(f'{input_path}/{lang}/', '*dev.conllu'))[0], 'r', encoding='utf-8') as f:
+        predictions = []
+        sentence, tags = '', ['<BOL>']
+        for line in f:
+            if line == '\n' or line[0] == '#':
+                if sentence != '':
+                    tags.append('<EOL>')
+                    res = predict_tags(sentence[:-1], trans_mat, emiss_mat, all_tags)
+                    predictions.append({'sentence': sentence[:-1], 'tags': tags, 'prediction': res})
+                    sentence, tags = '', ['<BOL>']
+            else:
+                w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
+                sentence += f'{word} '
+                tags.append(tag)
+    with open('output/predictions.json', 'w', encoding='utf-8') as output_file:
+        for p in predictions:
+            output_file.write(json.dumps(p, ensure_ascii=False, indent=4) + '\n')
 
-def predict_tags(sentence, trans_mat, emiss_mat, tags):
+def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
     """
     Predict the most probability tags for the sentence
     :param sentence: sentence to be predicted
@@ -128,16 +147,13 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags):
         for tag in tags:
             if f'{tag}, {w}' in emiss_mat:
                 prob = emiss_mat[f'{tag}, {w}']
-                print(f'{result[-1]}, {tag}')
                 if f'{result[-1]}, {tag}' in trans_mat:
                     prob = prob * trans_mat[f'{result[-1]}, {tag}']
                     if prob > max_prob:
                         max_prob = prob
                         max_prob_tag = tag
-            else:
-                print(f'{tag}, {w} not in emiss_mat')
         if max_prob_tag == '':
-            max_prob_tag = 'PROPN'
+            max_prob_tag = 'PROPN' if lang == 'English' else 'NOUN'
         result.append(max_prob_tag)
     result.append('<EOL>')
     return result
@@ -150,5 +166,7 @@ def main():
     emission_mat = calculate_emission_probs(total_counts["English"]["tags"], total_counts["English"]["emissions"])
     res = predict_tags('i love your cat so much', trans_mat, emission_mat, total_counts["English"]["tags"].keys())
     print(res)
+    evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts["English"]["tags"].keys())
+
 if __name__ == "__main__":
     main()
