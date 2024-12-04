@@ -22,6 +22,7 @@ def count_occurrences(corpus):
             counts = {'transitions': {}, 'emissions': {}, 'tags': {'<BOL>': 1}}
             with open(glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))[0], 'r', encoding='utf-8') as f:
                 tag = '<BOL>'
+
                 for line in f:
                     prev_tag, word = tag, ''
                     if line == '\n':tag = '<EOL>'
