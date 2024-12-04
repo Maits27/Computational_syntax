@@ -31,12 +31,15 @@ def count_occurrences(corpus):
                     if not (tag == '<BOL>' and prev_tag == '<BOL>'):
                         if tag not in counts['tags']: counts['tags'][tag] = 1
                         else: counts['tags'][tag] += 1
+
                         if not (tag == '<BOL>' and prev_tag == '<EOL>'):
                             if f'{prev_tag}, {tag}' not in counts['transitions']: counts['transitions'][f'{prev_tag}, {tag}'] = 1
                             else: counts['transitions'][f'{prev_tag}, {tag}'] += 1
+
                         if word != '':
                             if f'{tag}, {word}' not in counts['emissions']: counts['emissions'][f'{tag}, {word}'] = 1
                             else: counts['emissions'][f'{tag}, {word}'] += 1
+
             total_counts[lang] = counts
 
         with open(output_path, 'w', encoding='utf-8') as output_file:
