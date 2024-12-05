@@ -103,6 +103,7 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict):
         json.dump(trans_mat, archivo, ensure_ascii=False, indent=4)
     return trans_mat
 
+
 def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English'):
     """
     Evaluate the model with the test data
@@ -126,9 +127,10 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English'):
                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
                 sentence += f'{word} '
                 tags.append(tag)
-    with open('output/predictions.json', 'w', encoding='utf-8') as output_file:
+    with open('output/predictions.jsonl', 'w', encoding='utf-8') as output_file:
         for p in predictions:
             output_file.write(json.dumps(p, ensure_ascii=False, indent=4) + '\n')
+
 
 def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
     """
@@ -159,7 +161,6 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
     return result
 
 
-
 def main():
     total_counts = count_occurrences(Path('UD-Data'))
     trans_mat = calculate_transition_probs(total_counts["English"]["tags"], total_counts["English"]["transitions"])
@@ -167,6 +168,7 @@ def main():
     res = predict_tags('i love your cat so much', trans_mat, emission_mat, total_counts["English"]["tags"].keys())
     print(res)
     evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts["English"]["tags"].keys())
+
 
 if __name__ == "__main__":
     main()
