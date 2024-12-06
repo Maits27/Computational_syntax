@@ -1,6 +1,28 @@
 import json, glob, os
 from pathlib import Path
 
+def stablish_unk_words(lines, threshold=2):
+    """
+    This function stablishes the words that will be considered as unknown
+    :param lines: all the lines of the corpus
+    :param threshold: threshold to consider a word as unknown
+    :return: a list with the words that will be considered as unknown
+    """
+    words = {}
+    unk_words = set()
+    for line in lines:
+        if line == '\n' or line[0] == '#':
+            continue
+        w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
+        if word not in words:
+            words[word] = 1
+        else:
+            words[word] += 1
+    for word, count in words.items():
+        if count < threshold:
+            unk_words.add(word)
+    print(len(unk_words))
+    return unk_words
 
 def count_occurrences(corpus):
     """
@@ -23,8 +45,9 @@ def count_occurrences(corpus):
         for lang in total_counts:
             counts = {'transitions': {}, 'emissions': {}, 'tags': {'<BOL>': 1}}
             with open(glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))[0], 'r', encoding='utf-8') as f:
+                unk_words = stablish_unk_words(f.readlines())
+            with open(glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))[0], 'r', encoding='utf-8') as f:
                 tag = '<BOL>'
-
                 for line in f:
                     prev_tag, word = tag, ''
                     if line == '\n':
@@ -33,7 +56,8 @@ def count_occurrences(corpus):
                         tag = '<BOL>'
                     else:
                         w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
-
+                        if word in unk_words:
+                            word = '<UNK>'
                     if not (tag == '<BOL>' and prev_tag == '<BOL>'):
                         if tag not in counts['tags']:
                             counts['tags'][tag] = 1
@@ -154,8 +178,15 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
                     if prob > max_prob:
                         max_prob = prob
                         max_prob_tag = tag
-        if max_prob_tag == '':
-            max_prob_tag = 'PROPN' if lang == 'English' else 'NOUN'
+            elif f'{tag}, <UNK>' in emiss_mat:
+                prob = emiss_mat[f'{tag}, <UNK>']
+                if f'{result[-1]}, {tag}' in trans_mat:
+                    prob = prob * trans_mat[f'{result[-1]}, {tag}']
+                    if prob > max_prob:
+                        max_prob = prob
+                        max_prob_tag = tag
+        # if max_prob_tag == '':
+        #     max_prob_tag = 'PROPN' if lang == 'English' else 'NOUN'
         result.append(max_prob_tag)
     result.append('<EOL>')
     return result
