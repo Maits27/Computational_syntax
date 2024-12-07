@@ -41,7 +41,8 @@ def count_occurrences(corpus):
         with open(output_path, 'r', encoding='utf-8') as f:
             total_counts = json.load(f)
     else:
-        os.mkdir('data')
+        if not (os.path.exists('data')):
+            os.mkdir('data')
         for lang in total_counts:
             counts = {'transitions': {}, 'emissions': {}, 'tags': {'<BOL>': 1}}
             with open(glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))[0], 'r', encoding='utf-8') as f:
@@ -173,31 +174,36 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
     for w in words:
         max_prob = 0
         max_prob_tag = ''
+
+        # iterate all the posible tags
         for tag in tags:
-            if f'{tag}, {w}' in emiss_mat:
+            if f'{tag}, {w}' in emiss_mat: #get prob. of emission matrix (TAG, word)
                 prob = emiss_mat[f'{tag}, {w}']
-                if f'{result[-1]}, {tag}' in trans_mat:
-                    prob = prob * trans_mat[f'{result[-1]}, {tag}']
-                    if prob > max_prob:
+                if f'{result[-1]}, {tag}' in trans_mat: # get prob of transition matrix (TAG1, TAG2)
+                    prob = prob * trans_mat[f'{result[-1]}, {tag}'] # mulitply both probs
+                    if prob > max_prob: #if it is bigger than the max, apply
                         max_prob = prob
                         max_prob_tag = tag
-            elif f'{tag}, <UNK>' in emiss_mat:
-                prob = emiss_mat[f'{tag}, <UNK>']
-                if f'{result[-1]}, {tag}' in trans_mat:
-                    prob = prob * trans_mat[f'{result[-1]}, {tag}']
-                    if prob > max_prob:
-                        max_prob = prob
-                        max_prob_tag = tag
-        # if max_prob_tag == '':
-        #     max_prob_tag = 'PROPN' if lang == 'English' else 'NOUN'
+
+
+        #check if it is UNK word
+        if max_prob_tag == '':
+            for tag in tags:
+                if f'{tag}, <UNK>' in emiss_mat: # check with the <UNK> token
+                    prob = emiss_mat[f'{tag}, <UNK>']
+                    if f'{result[-1]}, {tag}' in trans_mat:
+                        prob = prob * trans_mat[f'{result[-1]}, {tag}']
+                        if prob > max_prob:
+                            max_prob = prob
+                            max_prob_tag = tag
+
         result.append(max_prob_tag)
     result.append('<EOL>')
     return result
 
 
 def predict_examples():
-    #ENGLISH
-
+    #predict a example of each language via terminal
     for lang in ['English',"Spanish"]:
         with open(f"data/{lang}_emission_mat.json", "r", encoding="utf-8") as archivo:
             em = json.loads(archivo.read())
@@ -230,8 +236,14 @@ def main():
 
         evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang)
 
-    predict_examples()
-
 
 if __name__ == "__main__":
-    main()
+    #option to train or predict examples
+    option = input("Train (t) or Predict (p): ")
+    if option == 't':
+        main()
+    elif option == 'p':
+        predict_examples()
+    else:
+        print("Invalid option")
+
