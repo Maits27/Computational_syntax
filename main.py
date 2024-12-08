@@ -103,7 +103,7 @@ def calculate_emission_probs(tag_counts: dict, tag_word_counts: dict, lang: str)
         prob = counts/count_of_tag  # counts(tag, word)/counts(tag)
         emission_probs[key] = prob
 
-    with open(f"data/{lang}_emission_mat.json", "w") as archivo:
+    with open(f"data/{lang}_emission_mat.json", "w", encoding="utf-8") as archivo:
         json.dump(emission_probs, archivo, ensure_ascii=False, indent=4)
     return emission_probs
 
@@ -127,7 +127,7 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict, lang: str
         prob = counts / prev_tag_count
         trans_mat[tag1_tag2] = prob
 
-    with open(f"data/{lang}_trans_mat.json", "w") as archivo:
+    with open(f"data/{lang}_trans_mat.json", "w", encoding="utf-8") as archivo:
         json.dump(trans_mat, archivo, ensure_ascii=False, indent=4)
     return trans_mat
 
@@ -135,9 +135,12 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict, lang: str
 def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English'):
     """
     Evaluate the model with the test data
-    :param input_path: path to the test data
-    :param lang: language of the data
-    :return: accuracy of the model
+    :param input_path: input path of the test data
+    :param trans_mat: transition matrix in JSON format
+    :param emiss_mat: emission matrix in JSON format
+    :param all_tags: possible tag list
+    :param lang: language (English or Spanish)
+    :return:
     """
     if not Path('output').exists():
         os.mkdir('output')
@@ -166,7 +169,9 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
     :param sentence: sentence to be predicted
     :param trans_mat: matrix of prob of transitions
     :param emiss_mat: matrix of prob of emission
-    :return: transition probabilities for that tag
+    :param tags: list of possible tags
+    :param lang: language. Defaults to English
+    :return: POS tag sequence for the input sentence
     """
 
     words = sentence.replace('.', '').lower().split(' ')
@@ -203,13 +208,16 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
 
 
 def predict_examples():
-    #predict a example of each language via terminal
+    """
+    Method to try de model in English and Spanish
+    :return: Void
+    """
     for lang in ['English',"Spanish"]:
         with open(f"data/{lang}_emission_mat.json", "r", encoding="utf-8") as archivo:
             em = json.loads(archivo.read())
-        with open(f"data/{lang}_trans_mat.json", "r") as archivo:
+        with open(f"data/{lang}_trans_mat.json", "r", encoding="utf-8") as archivo:
             tm = json.loads(archivo.read())
-        with open("data/counts.json", "r") as archivo:
+        with open("data/counts.json", "r", encoding="utf-8") as archivo:
             counts = json.loads(archivo.read())
         sentence = input(f"Write a sentence in {lang} or press ENTER to default one: ")
         if sentence == '':
