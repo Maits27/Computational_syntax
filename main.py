@@ -132,7 +132,7 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict, lang: str
     return trans_mat
 
 
-def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English'):
+def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', info=""):
     """
     Evaluate the model with the test data
     :param input_path: input path of the test data
@@ -144,6 +144,8 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English'):
     """
     if not Path('output').exists():
         os.mkdir('output')
+    if not Path(os.path.join(f'{input_path}/{lang}/', '*dev.conllu')).exists():
+        return
     with open(glob.glob(os.path.join(f'{input_path}/{lang}/', '*dev.conllu'))[0], 'r', encoding='utf-8') as f:
         predictions = []
         sentence, tags = '', ['<BOL>']
@@ -158,7 +160,7 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English'):
                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
                 sentence += f'{word} '
                 tags.append(tag)
-    with open(f'output/{lang}_predictions.jsonl', 'w', encoding='utf-8') as output_file:
+    with open(f'output/{info}{lang}_predictions.jsonl', 'w', encoding='utf-8') as output_file:
         for p in predictions:
             output_file.write(json.dumps(p, ensure_ascii=False, indent=4) + '\n')
 
@@ -174,7 +176,7 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
     :return: POS tag sequence for the input sentence
     """
 
-    words = sentence.replace('.', '').lower().split(' ')
+    words = sentence.lower().split(' ')
     result = ['<BOL>']
     for w in words:
         max_prob = 0
@@ -222,7 +224,7 @@ def predict_examples():
         sentence = input(f"Write a sentence in {lang} or press ENTER to default one: ")
         if sentence == '':
             if lang == 'English':
-                sentence = "i would like the cheapest flight from pittsburgh to atlanta leaving april twenty fifth and returning may sixth"
+                sentence = "i would like the cheapest flight from pittsburgh to atlanta , leaving april twenty fifth and returning may sixth . "
             else:
                 sentence = "La intérprete de No me importa nada llega mañana , a las diez de la noche , al a el Palau ."
         res = predict_tags(sentence, tm, em, counts[lang]["tags"].keys())
@@ -243,6 +245,8 @@ def main():
         emission_mat = calculate_emission_probs(total_counts[lang]["tags"], total_counts[lang]["emissions"], lang)
 
         evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang)
+        #out of domain evaluation
+        evaluate_model(Path('UD-Data/out_of_domain'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang, "od_")
 
 
 if __name__ == "__main__":
