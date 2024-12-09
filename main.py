@@ -1,5 +1,18 @@
-import json, glob, os
+import json, glob, os, re
 from pathlib import Path
+
+
+def split_sentence(sentence):
+    """
+    Split a sentence into words
+    :param sentence: sentence to be splitted
+    :return: list of words
+    """
+    sentence = re.sub(r'([.,!?;:])', r' \1 ', sentence)
+    sentence = re.sub(r'\s+', ' ', sentence).strip()
+    words = sentence.lower().split(' ')
+
+    return words
 
 def establish_unk_words(lines, threshold=2):
     """
@@ -24,7 +37,7 @@ def establish_unk_words(lines, threshold=2):
     print(len(unk_words))
     return unk_words
 
-def count_occurrences(corpus):
+def count_occurrences(corpus, step=0):
     """
     This function counts the occurrences of each
         tag,
@@ -32,6 +45,7 @@ def count_occurrences(corpus):
         tag, tag
     and saves it on a file if it doens't exist (if file already exists, it is not saved)
     :param corpus: all the corpus
+    :param step: 0 if only uses train and 1 if uses train and dev to train the model
     :return: returns a json with the counts ({tags:{...}, ...})
     """
     total_counts = {'English': {}, 'Spanish': {}}
@@ -44,39 +58,48 @@ def count_occurrences(corpus):
         if not (os.path.exists('data')):
             os.mkdir('data')
         for lang in total_counts:
+            files_to_train = glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))
+            if step != 0:
+                files_to_train += glob.glob(os.path.join(f'{corpus}/{lang}/', '*dev.conllu'))
             counts = {'transitions': {}, 'emissions': {}, 'tags': {'<BOL>': 1}}
-            with open(glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))[0], 'r', encoding='utf-8') as f:
-                unk_words = establish_unk_words(f.readlines())
-            with open(glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))[0], 'r', encoding='utf-8') as f:
-                tag = '<BOL>'
-                for line in f:
-                    prev_tag, word = tag, ''
-                    if line == '\n':
-                        tag = '<EOL>'
-                    elif line[0] == '#':
-                        tag = '<BOL>'
-                    else:
-                        w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
-                        if word in unk_words:
-                            word = '<UNK>'
 
-                    if not (tag == '<BOL>' and prev_tag == '<BOL>'):
-                        if tag not in counts['tags']:
-                            counts['tags'][tag] = 1
+            unk_words = set()
+            for file in files_to_train:
+                with open(file, 'r', encoding='utf-8') as f:
+                    unk_words = unk_words.union(establish_unk_words(f.readlines()))
+
+            for file in files_to_train:
+                with open(file, 'r', encoding='utf-8') as f:
+                    tag = '<BOL>'
+                    for line in f:
+                        prev_tag, word = tag, ''
+                        if line == '\n':
+                            tag = '<EOL>'
+                        elif line[0] == '#':
+                            tag = '<BOL>'
                         else:
-                            counts['tags'][tag] += 1
+                            w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
+                            word = word.lower()
+                            if word in unk_words:
+                                word = '<UNK>'
 
-                        if not (tag == '<BOL>' and prev_tag == '<EOL>'):
-                            if f'{prev_tag}, {tag}' not in counts['transitions']:
-                                counts['transitions'][f'{prev_tag}, {tag}'] = 1
+                        if not (tag == '<BOL>' and prev_tag == '<BOL>'):
+                            if tag not in counts['tags']:
+                                counts['tags'][tag] = 1
                             else:
-                                counts['transitions'][f'{prev_tag}, {tag}'] += 1
+                                counts['tags'][tag] += 1
 
-                        if word != '':
-                            if f'{tag}, {word}' not in counts['emissions']:
-                                counts['emissions'][f'{tag}, {word}'] = 1
-                            else:
-                                counts['emissions'][f'{tag}, {word}'] += 1
+                            if not (tag == '<BOL>' and prev_tag == '<EOL>'):
+                                if f'{prev_tag}, {tag}' not in counts['transitions']:
+                                    counts['transitions'][f'{prev_tag}, {tag}'] = 1
+                                else:
+                                    counts['transitions'][f'{prev_tag}, {tag}'] += 1
+
+                            if word != '':
+                                if f'{tag}, {word}' not in counts['emissions']:
+                                    counts['emissions'][f'{tag}, {word}'] = 1
+                                else:
+                                    counts['emissions'][f'{tag}, {word}'] += 1
 
             total_counts[lang] = counts
 
@@ -132,7 +155,7 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict, lang: str
     return trans_mat
 
 
-def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', info=""):
+def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', info="", step='dev'):
     """
     Evaluate the model with the test data
     :param input_path: input path of the test data
@@ -140,13 +163,17 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
     :param emiss_mat: emission matrix in JSON format
     :param all_tags: possible tag list
     :param lang: language (English or Spanish)
+    :param info: additional info to save the file
+    :param step: step of the evaluation (dev or test)
     :return:
     """
     if not Path('output').exists():
         os.mkdir('output')
-    if not Path(os.path.join(f'{input_path}/{lang}/', '*dev.conllu')).exists():
+    if len(glob.glob(os.path.join(f'{input_path}/{lang}/', f'*{step}.conllu')))==0:
+        p = os.path.join(f'{input_path}/{lang}/', f'*{step}.conllu')
+        print(f'{p} file not found')
         return
-    with open(glob.glob(os.path.join(f'{input_path}/{lang}/', '*dev.conllu'))[0], 'r', encoding='utf-8') as f:
+    with open(glob.glob(os.path.join(f'{input_path}/{lang}/', f'*{step}.conllu'))[0], 'r', encoding='utf-8') as f:
         predictions = []
         sentence, tags = '', ['<BOL>']
         for line in f:
@@ -160,23 +187,22 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
                 sentence += f'{word} '
                 tags.append(tag)
-    with open(f'output/{info}{lang}_predictions.jsonl', 'w', encoding='utf-8') as output_file:
+    with open(f'output/{info}{lang}_predictions_{step}.jsonl', 'w', encoding='utf-8') as output_file:
         for p in predictions:
             output_file.write(json.dumps(p, ensure_ascii=False, indent=4) + '\n')
 
 
-def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
+def predict_tags(sentence, trans_mat, emiss_mat, tags):
     """
     Predict the most probability tags for the sentence
     :param sentence: sentence to be predicted
     :param trans_mat: matrix of prob of transitions
     :param emiss_mat: matrix of prob of emission
     :param tags: list of possible tags
-    :param lang: language. Defaults to English
     :return: POS tag sequence for the input sentence
     """
+    words = split_sentence(sentence)
 
-    words = sentence.lower().split(' ')
     result = ['<BOL>']
     for w in words:
         max_prob = 0
@@ -191,7 +217,6 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags, lang='English'):
                     if prob > max_prob: #if it is bigger than the max, apply
                         max_prob = prob
                         max_prob_tag = tag
-
 
         #check if it is UNK word
         if max_prob_tag == '':
@@ -224,11 +249,13 @@ def predict_examples():
         sentence = input(f"Write a sentence in {lang} or press ENTER to default one: ")
         if sentence == '':
             if lang == 'English':
-                sentence = "i would like the cheapest flight from pittsburgh to atlanta , leaving april twenty fifth and returning may sixth . "
+                sentence = "i would like the cheapest flight from pittsburgh to atlanta, leaving april twenty fifth and returning may sixth. "
             else:
-                sentence = "La intérprete de No me importa nada llega mañana , a las diez de la noche , al a el Palau ."
+                sentence = "La intérprete de No me importa nada llega mañana, a las diez de la noche, al a el Palau."
         res = predict_tags(sentence, tm, em, counts[lang]["tags"].keys())
-        words = sentence.split()  # Separate in words the sentence
+
+        words = split_sentence(sentence) # Separate in words the sentence
+
         tags = res[1:-1]
         for word, tag in zip(words, tags):
             print(f"{word:<15}{tag}")
