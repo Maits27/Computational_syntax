@@ -37,7 +37,7 @@ def establish_unk_words(lines, threshold=2):
     print(len(unk_words))
     return unk_words
 
-def count_occurrences(corpus, step=0):
+def count_occurrences(corpus, step='dev'):
     """
     This function counts the occurrences of each
         tag,
@@ -45,7 +45,7 @@ def count_occurrences(corpus, step=0):
         tag, tag
     and saves it on a file if it doens't exist (if file already exists, it is not saved)
     :param corpus: all the corpus
-    :param step: 0 if only uses train and 1 if uses train and dev to train the model
+    :param step: 'dev' if only uses train and 'test' if uses train and dev to train the model
     :return: returns a json with the counts ({tags:{...}, ...})
     """
     total_counts = {'English': {}, 'Spanish': {}}
@@ -59,7 +59,7 @@ def count_occurrences(corpus, step=0):
             os.mkdir('data')
         for lang in total_counts:
             files_to_train = glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))
-            if step != 0:
+            if not step.__eq__('train'):
                 files_to_train += glob.glob(os.path.join(f'{corpus}/{lang}/', '*dev.conllu'))
             counts = {'transitions': {}, 'emissions': {}, 'tags': {'<BOL>': 1}}
 
@@ -187,7 +187,7 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
                 sentence += f'{word} '
                 tags.append(tag)
-    with open(f'output/{info}{lang}_predictions_{step}.jsonl', 'w', encoding='utf-8') as output_file:
+    with open(f'output/{info}{lang}_predictions.jsonl', 'w', encoding='utf-8') as output_file:
         for p in predictions:
             output_file.write(json.dumps(p, ensure_ascii=False, indent=4) + '\n')
 
@@ -261,25 +261,27 @@ def predict_examples():
             print(f"{word:<15}{tag}")
 
 
-def main():
+def main(step='dev'):
 
     # CREATE COUNTS FOR EACH LANGUAGE
-    total_counts = count_occurrences(Path('UD-Data'))
+    total_counts = count_occurrences(Path('UD-Data'), step)
 
     # TRAIN and Evaluate each language
     for lang in ["English", "Spanish"]:
         trans_mat = calculate_transition_probs(total_counts[lang]["tags"], total_counts[lang]["transitions"], lang)
         emission_mat = calculate_emission_probs(total_counts[lang]["tags"], total_counts[lang]["emissions"], lang)
 
-        evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang)
+        evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang, f'{step}_', step)
         #out of domain evaluation
         evaluate_model(Path('UD-Data/out_of_domain'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang, "od_")
 
 
 if __name__ == "__main__":
     #option to train or predict examples
-    option = input("Train (t) or Predict (p): ")
+    option = input("CHOOSE ONE:\n\nTrain and evaluate (e)\nTrain with dev too and run test (t)\nPredict (p)\nYour option: ")
     if option == 't':
+        main('test')
+    elif option == 'e':
         main()
     elif option == 'p':
         predict_examples()
