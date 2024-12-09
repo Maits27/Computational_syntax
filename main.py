@@ -8,10 +8,10 @@ def split_sentence(sentence):
     :param sentence: sentence to be splitted
     :return: list of words
     """
-    sentence = re.sub(r'([.,!?;:])', r' \1 ', sentence)
+    sentence = re.sub(r'(?<!\d)(?<!\w)([.,!?;:])(?!\d)(?!\w)', r' \1 ', sentence)
     sentence = re.sub(r'\s+', ' ', sentence).strip()
+    sentence = sentence.replace('. . .', '...')
     words = sentence.lower().split(' ')
-
     return words
 
 def establish_unk_words(lines, threshold=2):
