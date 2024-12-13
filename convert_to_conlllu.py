@@ -69,6 +69,6 @@ if __name__ == "__main__":
         print(f"Error: The file '{input_path}' does not exist.")
         sys.exit(1)
 
-    output_path = os.path.join(os.getcwd(), "UD-Data/out_of_domain/Spanish/es-tweets-test.conllu")
+    output_path = os.path.join(os.getcwd(), "UD-Data/out_of_domain/Spanish/es-tweets-dev.conllu")
     convert_to_conll(input_path, output_path)
     print(f"Converted file saved to: {output_path}")

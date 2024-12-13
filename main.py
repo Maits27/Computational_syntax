@@ -8,9 +8,9 @@ def split_sentence(sentence):
     :param sentence: sentence to be splitted
     :return: list of words
     """
-    sentence = re.sub(r'(?<!\d)(?<!\w)([.,!?;:])(?!\d)(?!\w)', r' \1 ', sentence)
-    sentence = re.sub(r'\s+', ' ', sentence).strip()
-    sentence = sentence.replace('. . .', '...')
+    #sentence = re.sub(r'(?<!\d)(?<!\w)([.,!?;:])(?!\d)(?!\w)', r' \1 ', sentence)
+    #sentence = re.sub(r'\s+', ' ', sentence).strip()
+    #sentence = sentence.replace('. . .', '...')
     words = sentence.lower().split(' ')
     return words
 
@@ -177,14 +177,14 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
         return
     with open(glob.glob(os.path.join(f'{input_path}/{lang}/', f'*{step}.conllu'))[0], 'r', encoding='utf-8') as f:
         predictions = []
-        sentence, tags = '', ['<BOL>']
+        sentence, tags = '', []
         for line in f:
             if line == '\n' or line[0] == '#':
                 if sentence != '':
-                    tags.append('<EOL>')
+
                     res = predict_tags(sentence[:-1], trans_mat, emiss_mat, all_tags)
                     predictions.append({'sentence': sentence[:-1], 'tags': tags, 'prediction': res})
-                    sentence, tags = '', ['<BOL>']
+                    sentence, tags = '', []
             else:
                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
                 sentence += f'{word} '
@@ -203,6 +203,7 @@ def predict_tags(sentence: str, trans_mat: dict[str, float], emiss_mat: dict[str
     :param tags: list of possible tags
     :return: POS tag sequence for the input sentence
     """
+    sentence.lower()
     assert len(sentence.replace(" ", "")) > 0, "The sentence must contain at least one token"
 
     set_tags = set(tags)
@@ -214,7 +215,7 @@ def predict_tags(sentence: str, trans_mat: dict[str, float], emiss_mat: dict[str
     # words.append('<EOL>')
 
     result = []
-    probabilidades = [[(0.0, '_', -1) for _ in range(len(words))] for _ in range(len(try_tags))]
+    probabilidades = [[(0.0, 'TAG_INVENTADO_PRUEBA', -1) for _ in range(len(try_tags))] for _ in range(len(words))]
     existe_palabra = False
     # the first word
     w = words[0]
@@ -243,8 +244,8 @@ def predict_tags(sentence: str, trans_mat: dict[str, float], emiss_mat: dict[str
         for j, tag_actual in enumerate(try_tags):
             # other words
             # we iterate the previous tags and we choose the one with the max prob
-            for t, tag_anterior in enumerate(try_tags):
-                if f'{tag_actual}, {w}' in emiss_mat:
+            if f'{tag_actual}, {w}' in emiss_mat:
+                for t, tag_anterior in enumerate(try_tags):
                     p_acc, _, _ = probabilidades[i - 1][t]
                     p_e = emiss_mat[f'{tag_actual}, {w}']
                     p_t = trans_mat[
@@ -256,36 +257,37 @@ def predict_tags(sentence: str, trans_mat: dict[str, float], emiss_mat: dict[str
             # check if it is UNK word
         if not existe_palabra:
             for j, tag_actual in enumerate(try_tags):
-                for t, tag_anterior in enumerate(try_tags):
-                    if f'{tag_actual}, <UNK>' in emiss_mat:
+                if f'{tag_actual}, <UNK>' in emiss_mat:
+                    for t, tag_anterior in enumerate(try_tags):
                         p_acc, _, _ = probabilidades[i - 1][t]
                         p_e = emiss_mat[f'{tag_actual}, <UNK>']
                         p_t = trans_mat[
                             f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else 0
                         p_actual = p_acc * p_e * p_t
-                        print(i, j)
+                        # print(i, j)
                         if p_actual > probabilidades[i][j][0]:  # we save the max prob
                             probabilidades[i][j] = (p_actual, tag_anterior, t)
 
     max_prob = 0
     max_prob_tag = ''
-    max_id_tag = 0
+    id_anterior = 0
     for t, tag in enumerate(try_tags):
         p_acc, tag_anterior, id_tag = probabilidades[-1][t]
-        p_t = trans_mat[f'{tag_anterior}, <EOL>'] if f'{tag_anterior}, <EOL>' in trans_mat else 0
+        p_t = trans_mat[f'{tag}, <EOL>'] if f'{tag}, <EOL>' in trans_mat else 0
         p_actual = p_acc * p_t
         if p_actual > max_prob:  # we save the max prob
             max_prob = p_actual
             max_prob_tag = tag
-            max_id_tag = id_tag
+            id_anterior = t
 
     # backtrack
     pila = []
-    for i in range(len(words)-1, -1, -1):
-        pila.append(max_prob_tag)
-        _, max_prob_tag, max_id_tag = probabilidades[i][max_id_tag]
+    pila.append(max_prob_tag)
+    for i in range(len(words)-1, 0, -1):
+        _, max_prob_tag_anterior, id_anterior = probabilidades[i][id_anterior]
+        pila.append(max_prob_tag_anterior)
 
-    print(probabilidades)
+    #print(probabilidades)
     pila.reverse()
     return pila
 

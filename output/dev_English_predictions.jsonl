@@ -1,7 +1,6 @@
 {
     "sentence": "Creative Commons Corporation is not a law firm and does not provide legal services .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "PROPN",
         "NOUN",
@@ -16,33 +15,29 @@
         "VERB",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "PROPN",
         "PROPN",
         "NOUN",
         "AUX",
         "PART",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "CCONJ",
         "AUX",
         "PART",
         "VERB",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The work ( as defined below ) is provided under the terms of this Creative Commons Public License ( \" CCPL \" or \" License \" ) .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "PUNCT",
@@ -70,21 +65,19 @@
         "NOUN",
         "PUNCT",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
         "PUNCT",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "AUX",
+        "ADV",
         "VERB",
-        "NOUN",
         "DET",
         "NOUN",
         "ADP",
@@ -102,71 +95,57 @@
         "NOUN",
         "PUNCT",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "1 . Definitions .",
     "tags": [
-        "<BOL>",
         "NUM",
         "PUNCT",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NUM",
         "PUNCT",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "4 . Restrictions .",
     "tags": [
-        "<BOL>",
         "NUM",
         "PUNCT",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
-        "PUNCT",
         "NOUN",
         "PUNCT",
-        "<EOL>"
+        "NOUN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "7 . Termination .",
     "tags": [
-        "<BOL>",
         "NUM",
         "PUNCT",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
-        "PUNCT",
         "NOUN",
         "PUNCT",
-        "<EOL>"
+        "NOUN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "You have requested a debate on this subject in the course of the next few days , during this part - session .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
@@ -189,11 +168,9 @@
         "ADJ",
         "PUNCT",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
@@ -207,23 +184,21 @@
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "NOUN",
-        "PRON",
         "ADJ",
-        "PUNCT",
+        "NOUN",
         "NOUN",
         "PUNCT",
-        "<EOL>"
+        "VERB",
+        "DET",
+        "NOUN",
+        "PUNCT",
+        "NOUN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "The Cunha report on multiannual guidance programmes comes before Parliament on Thursday and contains a proposal in paragraph 6 that a form of quota penalties should be introduced for countries which fail to meet their fleet reduction targets annually .",
     "tags": [
-        "<BOL>",
         "DET",
         "PROPN",
         "NOUN",
@@ -263,35 +238,33 @@
         "NOUN",
         "NOUN",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "PROPN",
         "NOUN",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "VERB",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "VERB",
         "DET",
         "NOUN",
         "ADP",
         "NOUN",
         "NUM",
-        "PRON",
+        "SCONJ",
         "DET",
         "NOUN",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "AUX",
         "AUX",
@@ -303,18 +276,16 @@
         "PART",
         "VERB",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
+        "VERB",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Mr Berenguer Fuster , we shall check all this .",
     "tags": [
-        "<BOL>",
         "NOUN",
         "PROPN",
         "PROPN",
@@ -324,28 +295,24 @@
         "VERB",
         "PRON",
         "PRON",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "PROPN",
         "PROPN",
         "PUNCT",
         "PRON",
+        "AUX",
         "VERB",
-        "NOUN",
         "PRON",
         "PRON",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "I should like to address one final point .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
@@ -354,27 +321,23 @@
         "NUM",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
         "PART",
         "VERB",
-        "NUM",
+        "PRON",
+        "VERB",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "I do realise that this is only a small step towards increased transport safety , but I would ask you to endorse this report .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
@@ -399,23 +362,21 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
         "SCONJ",
-        "DET",
+        "PRON",
+        "AUX",
         "VERB",
-        "NOUN",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
-        "NOUN",
+        "VERB",
+        "ADJ",
         "NOUN",
         "NOUN",
         "PUNCT",
@@ -428,14 +389,12 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "I am speaking for the first time in this plenary part - session , so this is quite exciting for me , a little like first love , although that did last longer than two minutes .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
@@ -472,11 +431,9 @@
         "ADP",
         "NUM",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NOUN",
@@ -486,41 +443,39 @@
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "NOUN",
-        "PUNCT",
-        "ADV",
-        "DET",
-        "VERB",
-        "NOUN",
-        "NOUN",
-        "ADP",
-        "NOUN",
-        "PUNCT",
-        "DET",
-        "ADJ",
-        "ADP",
         "ADJ",
         "NOUN",
         "PUNCT",
         "NOUN",
+        "PUNCT",
         "SCONJ",
+        "PRON",
+        "AUX",
         "VERB",
+        "NOUN",
+        "ADP",
+        "NOUN",
+        "PUNCT",
+        "DET",
+        "ADJ",
+        "ADP",
+        "ADJ",
+        "NOUN",
+        "PUNCT",
+        "VERB",
+        "PRON",
+        "AUX",
         "ADJ",
         "NOUN",
         "ADP",
         "NUM",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In many ways , the prerequisites differ from one Member State to another .",
     "tags": [
-        "<BOL>",
         "ADP",
         "ADJ",
         "NOUN",
@@ -534,17 +489,15 @@
         "NOUN",
         "ADP",
         "DET",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "ADJ",
         "NOUN",
         "PUNCT",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "NUM",
@@ -552,14 +505,12 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The reason Mr Koch produced his sound report was because the work in the CEN and within the United Nations Economic Commission was proceeding none too expeditiously .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "NOUN",
@@ -587,18 +538,16 @@
         "ADV",
         "ADV",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PROPN",
         "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "AUX",
         "SCONJ",
@@ -616,17 +565,15 @@
         "NOUN",
         "AUX",
         "VERB",
+        "ADV",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Mr President , I would once again like to congratulate Mr Koch on his magnificent work on this other report , which in a way supplements the debate which we held in October on rail transport .",
     "tags": [
-        "<BOL>",
         "NOUN",
         "NOUN",
         "PUNCT",
@@ -663,11 +610,9 @@
         "ADP",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "NOUN",
         "PUNCT",
@@ -682,7 +627,7 @@
         "PROPN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -693,7 +638,7 @@
         "ADP",
         "DET",
         "NOUN",
-        "NOUN",
+        "VERB",
         "DET",
         "NOUN",
         "PRON",
@@ -702,16 +647,14 @@
         "ADP",
         "PROPN",
         "ADP",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We have to remember that rural areas represent almost four fifths of the territory of the European Union .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "PART",
@@ -730,11 +673,9 @@
         "DET",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "PART",
@@ -743,7 +684,7 @@
         "ADJ",
         "NOUN",
         "VERB",
-        "NOUN",
+        "ADP",
         "NUM",
         "NOUN",
         "ADP",
@@ -753,14 +694,12 @@
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We are badly behind now in this matter .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADV",
@@ -769,27 +708,23 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
-        "NOUN",
+        "ADV",
         "ADV",
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We oppose the excessive control the central administration of the Union and its Member States exercises and we are calling for a reduction in the bureaucracy that has taken root in the drafting and implementation of programmes .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "DET",
@@ -827,18 +762,16 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "DET",
         "NOUN",
-        "NOUN",
+        "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -858,8 +791,8 @@
         "ADP",
         "DET",
         "NOUN",
-        "SCONJ",
-        "VERB",
+        "PRON",
+        "AUX",
         "VERB",
         "NOUN",
         "ADP",
@@ -869,14 +802,12 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The Structural Funds have played a key role in the development both of urban and rural parts of peripheral countries , mainly through the upgrading of roads , water treatment and related transport networks .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -911,18 +842,16 @@
         "ADJ",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
         "AUX",
         "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -934,7 +863,7 @@
         "ADJ",
         "NOUN",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "NOUN",
@@ -950,14 +879,12 @@
         "ADJ",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "how can we ensure that Union policy interfaces with the subsidiary national policies for regional development ?",
     "tags": [
-        "<BOL>",
         "ADV",
         "AUX",
         "PRON",
@@ -974,35 +901,31 @@
         "ADP",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "PRON",
         "AUX",
         "PRON",
         "VERB",
         "SCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "as far as French planning experts are concerned , for example , the most probable scenario today is that of the entrenchment of regional disparities within each country .",
     "tags": [
-        "<BOL>",
         "ADP",
         "ADV",
         "ADP",
@@ -1031,12 +954,10 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADP",
+        "ADV",
         "ADV",
         "ADP",
         "ADJ",
@@ -1051,9 +972,9 @@
         "DET",
         "ADJ",
         "NOUN",
-        "NOUN",
+        "VERB",
         "ADV",
-        "AUX",
+        "VERB",
         "SCONJ",
         "ADP",
         "DET",
@@ -1062,16 +983,14 @@
         "ADJ",
         "NOUN",
         "ADP",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In addition , if you choose to use Facebook from your mobile device , please note that you will be responsible for any fees associated with internet usage and / or text messaging as determined by your mobile service provider .",
     "tags": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "PUNCT",
@@ -1112,11 +1031,9 @@
         "NOUN",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "PUNCT",
@@ -1131,8 +1048,8 @@
         "ADJ",
         "NOUN",
         "PUNCT",
-        "NOUN",
-        "NOUN",
+        "ADV",
+        "VERB",
         "SCONJ",
         "PRON",
         "AUX",
@@ -1143,12 +1060,12 @@
         "NOUN",
         "VERB",
         "ADP",
-        "NOUN",
-        "NOUN",
-        "CCONJ",
+        "ADJ",
         "NOUN",
         "CCONJ",
         "NOUN",
+        "CCONJ",
+        "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
@@ -1157,14 +1074,12 @@
         "ADJ",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "To sign up for a brand new account , enter your name , birthday , gender , and email address into the form on www.facebook.com .",
     "tags": [
-        "<BOL>",
         "ADP",
         "VERB",
         "ADP",
@@ -1190,17 +1105,15 @@
         "NOUN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "ADP",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "ADJ",
         "NOUN",
         "PUNCT",
@@ -1213,57 +1126,47 @@
         "NOUN",
         "PUNCT",
         "CCONJ",
+        "ADJ",
         "NOUN",
-        "VERB",
         "ADP",
         "DET",
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Facebook Adverts .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Deepen your relationships .",
     "tags": [
-        "<BOL>",
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "10 % conversion rate from visits originating from Facebook Adverts .",
     "tags": [
-        "<BOL>",
         "NUM",
         "SYM",
         "NOUN",
@@ -1274,29 +1177,25 @@
         "ADP",
         "PROPN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
-        "VERB",
-        "NOUN",
+        "NUM",
+        "SYM",
+        "ADJ",
         "NOUN",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "( 21 ) EUPs complying with the ecodesign requirements laid down in implementing measures to this Directive should bear the \" CE \" marking and associated information , in order to enable them to be placed on the internal market and move freely .",
     "tags": [
-        "<BOL>",
         "PUNCT",
         "NUM",
         "PUNCT",
@@ -1340,24 +1239,22 @@
         "CCONJ",
         "VERB",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PUNCT",
         "NOUN",
         "PUNCT",
         "PROPN",
-        "VERB",
+        "NOUN",
         "ADP",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
+        "VERB",
+        "ADV",
         "ADP",
-        "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -1370,32 +1267,30 @@
         "PUNCT",
         "NOUN",
         "CCONJ",
-        "VERB",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "ADP",
         "NOUN",
-        "ADP",
-        "NOUN",
+        "PART",
+        "VERB",
         "PRON",
         "PART",
         "AUX",
         "VERB",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "VERB",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "and one of the workshops led to a proposal , by Member States , for a Council recommendation .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "ADP",
@@ -1414,16 +1309,14 @@
         "DET",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "NUM",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -1437,14 +1330,12 @@
         "DET",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Whereas recognition of the inherent dignity and of the equal and inalienable rights of all members of the human family is the foundation of freedom , justice and peace in the world ;",
     "tags": [
-        "<BOL>",
         "SCONJ",
         "NOUN",
         "ADP",
@@ -1477,23 +1368,21 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "SCONJ",
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "CCONJ",
         "ADP",
         "DET",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -1514,14 +1403,12 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "( 1 ) Everyone has the right to a nationality .",
     "tags": [
-        "<BOL>",
         "PUNCT",
         "NUM",
         "PUNCT",
@@ -1532,11 +1419,9 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PUNCT",
         "NUM",
         "PUNCT",
@@ -1547,56 +1432,46 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "It 's that pyramid .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "PRON",
-        "PART",
         "PRON",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "SCONJ",
+        "NOUN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "And what 's that ?",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "AUX",
         "SCONJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
-        "NOUN",
+        "VERB",
         "PART",
         "PRON",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "That top predator , of course , is us .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -1606,13 +1481,11 @@
         "PUNCT",
         "AUX",
         "PRON",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "SCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "ADP",
@@ -1620,14 +1493,12 @@
         "PUNCT",
         "AUX",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "I love a challenge , and saving the Earth is probably a good one .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "DET",
@@ -1642,11 +1513,9 @@
         "DET",
         "ADJ",
         "PRON",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "DET",
@@ -1661,14 +1530,12 @@
         "DET",
         "NOUN",
         "NUM",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We all know the Earth is in trouble .",
     "tags": [
-        "<BOL>",
         "PRON",
         "PRON",
         "VERB",
@@ -1677,11 +1544,9 @@
         "AUX",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "PRON",
         "VERB",
@@ -1690,14 +1555,12 @@
         "AUX",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We have now entered in the 6 X :",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADV",
@@ -1706,11 +1569,9 @@
         "DET",
         "NUM",
         "X",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADV",
@@ -1719,14 +1580,12 @@
         "DET",
         "NUM",
         "X",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "the sixth major extinction on this planet .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "ADJ",
@@ -1734,26 +1593,22 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
-        "NOUN",
+        "ADJ",
         "ADJ",
         "NOUN",
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "I think that vote is occurring right now .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "SCONJ",
@@ -1762,27 +1617,23 @@
         "VERB",
         "ADV",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "SCONJ",
-        "NOUN",
+        "PRON",
         "AUX",
         "VERB",
         "NOUN",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "I want to present to you a suite of six mycological solutions , using fungi , and these solutions are based on mycelium .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "PART",
@@ -1806,25 +1657,23 @@
         "VERB",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "PART",
         "VERB",
-        "PART",
+        "ADP",
         "PRON",
         "DET",
         "NOUN",
         "ADP",
         "NUM",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "CCONJ",
@@ -1834,14 +1683,12 @@
         "VERB",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The mycelium infuses all landscapes , it holds soils together , it 's extremely tenacious .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "VERB",
@@ -1857,15 +1704,13 @@
         "AUX",
         "ADV",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
-        "NOUN",
-        "PRON",
+        "VERB",
+        "DET",
         "NOUN",
         "PUNCT",
         "PRON",
@@ -1877,14 +1722,12 @@
         "PART",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "This holds up to 30,000 times its mass .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "ADV",
@@ -1893,27 +1736,23 @@
         "NOUN",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
         "ADP",
         "ADP",
         "NUM",
-        "NOUN",
+        "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "They 're the grand molecular disassemblers of nature - the soil magicians .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "DET",
@@ -1926,15 +1765,13 @@
         "DET",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
@@ -1943,14 +1780,12 @@
         "DET",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "They generate the humus soils across the landmasses of Earth .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "DET",
@@ -1961,29 +1796,25 @@
         "NOUN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Dusty and I , we like to say , on Sunday , this is where we go to church .",
     "tags": [
-        "<BOL>",
         "ADJ",
         "CCONJ",
         "PRON",
@@ -2003,11 +1834,9 @@
         "VERB",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADJ",
         "CCONJ",
         "PRON",
@@ -2015,26 +1844,24 @@
         "PRON",
         "VERB",
         "PART",
-        "VERB",
+        "NOUN",
         "PUNCT",
         "ADP",
         "PROPN",
         "PUNCT",
-        "DET",
-        "VERB",
+        "PRON",
+        "AUX",
         "SCONJ",
         "PRON",
         "VERB",
         "PART",
-        "VERB",
-        "PUNCT",
-        "<EOL>"
+        "NOUN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "I 'm in love with the old - growth forest , and I 'm a patriotic American because we have those .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADP",
@@ -2056,11 +1883,9 @@
         "PRON",
         "VERB",
         "PRON",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "ADP",
@@ -2076,20 +1901,18 @@
         "PRON",
         "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "ADJ",
         "SCONJ",
         "PRON",
         "AUX",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Most of you are familiar with Portobello mushrooms .",
     "tags": [
-        "<BOL>",
         "ADJ",
         "ADP",
         "PRON",
@@ -2098,11 +1921,9 @@
         "ADP",
         "PROPN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADV",
         "ADP",
         "PRON",
@@ -2111,14 +1932,12 @@
         "ADP",
         "PROPN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And frankly , I face a big obstacle .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "ADV",
         "PUNCT",
@@ -2127,27 +1946,23 @@
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "NOUN",
         "PUNCT",
         "PRON",
         "VERB",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "So , I hope to pierce that prejudice forever with this group .",
     "tags": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "PRON",
@@ -2160,11 +1975,9 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "PRON",
@@ -2172,19 +1985,17 @@
         "PART",
         "VERB",
         "SCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We call it mycophobia , the irrational fear of the unknown , when it comes to fungi .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "PRON",
@@ -2202,18 +2013,16 @@
         "VERB",
         "PART",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "PRON",
         "VERB",
         "PUNCT",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -2224,14 +2033,12 @@
         "VERB",
         "PART",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Mushrooms are very fast in their growth .",
     "tags": [
-        "<BOL>",
         "NOUN",
         "AUX",
         "ADV",
@@ -2239,11 +2046,9 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "AUX",
         "VERB",
@@ -2251,35 +2056,29 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Mushrooms produce strong antibiotics .",
     "tags": [
-        "<BOL>",
         "VERB",
         "NOUN",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
+        "VERB",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In fact , we 're more closely related to fungi than we are to any other kingdom .",
     "tags": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "PUNCT",
@@ -2297,36 +2096,32 @@
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "PUNCT",
         "PRON",
         "AUX",
         "ADV",
+        "ADV",
         "VERB",
-        "ADJ",
         "PART",
         "NOUN",
         "ADP",
         "PRON",
         "AUX",
-        "PART",
+        "ADP",
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We share in common the same pathogens .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "ADP",
@@ -2334,26 +2129,22 @@
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "ADP",
-        "NOUN",
+        "VERB",
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Fungi don't do not like to rot from bacteria , and so our best antibiotics come from fungi .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "_",
         "AUX",
@@ -2372,11 +2163,9 @@
         "VERB",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "NOUN",
         "AUX",
@@ -2395,14 +2184,12 @@
         "VERB",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "But here is a mushroom that 's past its prime .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "ADV",
         "VERB",
@@ -2413,29 +2200,25 @@
         "ADV",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "ADV",
         "AUX",
         "DET",
         "NOUN",
-        "SCONJ",
+        "PRON",
         "PART",
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "After they sporulate , they do rot .",
     "tags": [
-        "<BOL>",
         "ADP",
         "PRON",
         "NOUN",
@@ -2443,11 +2226,9 @@
         "PRON",
         "AUX",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "PRON",
         "VERB",
@@ -2455,14 +2236,12 @@
         "PRON",
         "AUX",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "But I propose to you that the sequence of microbes that occur on rotting mushrooms are essential for the health of the forest .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "VERB",
@@ -2486,25 +2265,23 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "VERB",
-        "PART",
+        "ADP",
         "PRON",
-        "PRON",
+        "SCONJ",
         "DET",
         "NOUN",
         "ADP",
         "NOUN",
-        "SCONJ",
-        "NOUN",
+        "PRON",
+        "VERB",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "AUX",
         "VERB",
@@ -2514,14 +2291,12 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "They give rise to the trees , they create the debris fields that feed the mycelium .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NOUN",
@@ -2538,11 +2313,9 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NOUN",
@@ -2555,18 +2328,16 @@
         "DET",
         "ADJ",
         "NOUN",
-        "SCONJ",
-        "NOUN",
+        "PRON",
+        "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And so we see a mushroom here sporulating .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "ADV",
         "PRON",
@@ -2575,27 +2346,23 @@
         "NOUN",
         "ADV",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
-        "ADV",
+        "SCONJ",
         "PRON",
         "VERB",
         "DET",
         "NOUN",
         "ADV",
-        "VERB",
-        "PUNCT",
-        "<EOL>"
+        "ADV",
+        "PUNCT"
     ]
 }
 {
     "sentence": "And the spores are germinating , and the mycelium forms and goes underground .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "DET",
         "NOUN",
@@ -2609,11 +2376,9 @@
         "CCONJ",
         "VERB",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "DET",
         "NOUN",
@@ -2625,16 +2390,14 @@
         "NOUN",
         "NOUN",
         "CCONJ",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In a single cubic inch of soil , there can be more than eight miles of these cells .",
     "tags": [
-        "<BOL>",
         "ADP",
         "DET",
         "NOUN",
@@ -2653,14 +2416,12 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
@@ -2671,19 +2432,17 @@
         "AUX",
         "ADV",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "My foot is covering approximately 300 miles of mycelium .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "AUX",
@@ -2693,28 +2452,24 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
-        "VERB",
+        "ADJ",
+        "NOUN",
         "AUX",
         "VERB",
-        "NOUN",
-        "NOUN",
+        "ADV",
+        "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "This is photomicrographs from Nick Read and Patrick Hickey .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADJ",
@@ -2724,28 +2479,24 @@
         "CCONJ",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "DET",
+        "PRON",
+        "AUX",
         "VERB",
-        "NOUN",
         "ADP",
         "PROPN",
-        "VERB",
+        "PROPN",
         "CCONJ",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And notice that as the mycelium grows , it conquers territory and then it begins the net .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "NOUN",
         "PRON",
@@ -2763,13 +2514,11 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
-        "NOUN",
+        "VERB",
         "SCONJ",
         "ADP",
         "DET",
@@ -2780,19 +2529,17 @@
         "VERB",
         "NOUN",
         "CCONJ",
-        "ADV",
+        "SCONJ",
         "PRON",
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We exhale carbon dioxide , so does mycelium .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NOUN",
@@ -2801,27 +2548,23 @@
         "ADV",
         "AUX",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NOUN",
         "NOUN",
         "PUNCT",
         "ADV",
-        "AUX",
+        "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "It inhales oxygen , just like we do .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NOUN",
@@ -2830,27 +2573,23 @@
         "SCONJ",
         "PRON",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NOUN",
         "PUNCT",
-        "NOUN",
-        "ADP",
+        "ADV",
+        "VERB",
         "PRON",
-        "AUX",
-        "PUNCT",
-        "<EOL>"
+        "VERB",
+        "PUNCT"
     ]
 }
 {
     "sentence": "But these are essentially externalized stomachs and lungs .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "AUX",
@@ -2859,27 +2598,23 @@
         "NOUN",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
-        "DET",
+        "PRON",
+        "AUX",
         "VERB",
-        "NOUN",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And I present to you a concept that these are extended neurological membranes .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "VERB",
@@ -2893,32 +2628,28 @@
         "VERB",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "VERB",
-        "PART",
+        "ADP",
         "PRON",
         "DET",
         "NOUN",
         "SCONJ",
-        "DET",
+        "PRON",
+        "AUX",
         "VERB",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And in these cavities , these micro - cavities form , and as they fuse soils , they absorb water .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "ADP",
         "DET",
@@ -2939,11 +2670,9 @@
         "PRON",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "ADP",
         "DET",
@@ -2956,7 +2685,7 @@
         "NOUN",
         "PUNCT",
         "CCONJ",
-        "ADP",
+        "SCONJ",
         "PRON",
         "VERB",
         "NOUN",
@@ -2964,35 +2693,29 @@
         "PRON",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "These are little wells .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "DET",
-        "VERB",
+        "PRON",
+        "AUX",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And inside these wells , then microbial communities begin to form .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "ADP",
         "DET",
@@ -3004,30 +2727,26 @@
         "VERB",
         "PART",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
-        "NOUN",
-        "PRON",
+        "VERB",
+        "DET",
         "NOUN",
         "PUNCT",
         "ADV",
         "VERB",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "I first proposed , in the early 1990 s , that mycelium is Earth 's natural Internet .",
     "tags": [
-        "<BOL>",
         "PRON",
         "ADJ",
         "VERB",
@@ -3045,36 +2764,32 @@
         "PART",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "ADJ",
         "NOUN",
         "PUNCT",
         "ADP",
         "DET",
-        "NOUN",
-        "NOUN",
+        "X",
+        "X",
         "X",
         "PUNCT",
         "SCONJ",
         "NOUN",
         "AUX",
-        "NOUN",
+        "PROPN",
         "PART",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "When you look at the mycelium , they 're highly branched .",
     "tags": [
-        "<BOL>",
         "SCONJ",
         "PRON",
         "VERB",
@@ -3086,11 +2801,9 @@
         "AUX",
         "ADV",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "SCONJ",
         "PRON",
         "VERB",
@@ -3102,60 +2815,50 @@
         "AUX",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The mycelium is sentient .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "AUX",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
         "AUX",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "It knows that you are there .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "SCONJ",
         "PRON",
         "AUX",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "SCONJ",
         "PRON",
         "AUX",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "When you walk across landscapes , it leaps up in the aftermath of your footsteps trying to grab debris .",
     "tags": [
-        "<BOL>",
         "SCONJ",
         "PRON",
         "VERB",
@@ -3175,11 +2878,9 @@
         "PART",
         "VERB",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "SCONJ",
         "PRON",
         "VERB",
@@ -3188,25 +2889,23 @@
         "PUNCT",
         "PRON",
         "VERB",
-        "ADP",
-        "ADP",
-        "DET",
-        "NOUN",
+        "ADV",
         "ADP",
         "DET",
         "NOUN",
+        "ADP",
+        "DET",
+        "ADJ",
         "NOUN",
         "ADP",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "So , I believe the invention of the computer Internet is an inevitable consequence of a previously proven , biologically successful model .",
     "tags": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "PRON",
@@ -3229,11 +2928,9 @@
         "ADV",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "PRON",
@@ -3242,28 +2939,26 @@
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "AUX",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "NOUN",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
-        "<EOL>"
+        "ADV",
+        "ADJ",
+        "NOUN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "Going way out , dark matter conforms to the same mycelial archetype .",
     "tags": [
-        "<BOL>",
         "VERB",
         "ADV",
         "ADJ",
@@ -3276,31 +2971,27 @@
         "NOUN",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
-        "ADV",
+        "ADJ",
+        "NOUN",
         "ADP",
         "PUNCT",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
         "DET",
         "ADJ",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And this is the paradigm that we see throughout the universe .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "AUX",
@@ -3312,30 +3003,26 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
-        "DET",
-        "VERB",
+        "PRON",
+        "AUX",
         "DET",
         "NOUN",
         "SCONJ",
         "PRON",
         "VERB",
-        "NOUN",
+        "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Most of you may not know that fungi were the first organisms to come to land .",
     "tags": [
-        "<BOL>",
         "ADJ",
         "ADP",
         "PRON",
@@ -3352,11 +3039,9 @@
         "VERB",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADV",
         "ADP",
         "PRON",
@@ -3369,18 +3054,16 @@
         "DET",
         "ADJ",
         "NOUN",
-        "ADP",
+        "PART",
         "VERB",
         "PART",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "They came to land 1.3 billion years ago , and plants followed several hundred million years later .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "ADP",
@@ -3398,57 +3081,49 @@
         "NUM",
         "NOUN",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "PART",
         "NOUN",
-        "NOUN",
-        "NOUN",
+        "VERB",
+        "ADJ",
         "NOUN",
         "ADV",
         "PUNCT",
         "CCONJ",
         "NOUN",
-        "NOUN",
+        "VERB",
         "ADJ",
         "NOUN",
         "NUM",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "How is that possible ?",
     "tags": [
-        "<BOL>",
         "ADV",
         "AUX",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "PRON",
         "AUX",
         "SCONJ",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Makes the rocks crumble , and the first step in the generation of soil .",
     "tags": [
-        "<BOL>",
         "VERB",
         "DET",
         "NOUN",
@@ -3463,14 +3138,12 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "CCONJ",
@@ -3482,14 +3155,12 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Oxalic acid is two carbon dioxide molecules joined together .",
     "tags": [
-        "<BOL>",
         "ADJ",
         "NOUN",
         "AUX",
@@ -3499,28 +3170,24 @@
         "NOUN",
         "VERB",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADJ",
         "NOUN",
         "AUX",
         "NUM",
         "NOUN",
         "NOUN",
-        "NOUN",
-        "NOUN",
+        "AUX",
+        "VERB",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "So , fungi and mycelium sequester carbon dioxide in the form of calcium oxalates .",
     "tags": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "NOUN",
@@ -3535,11 +3202,9 @@
         "ADP",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "NOUN",
@@ -3552,16 +3217,14 @@
         "DET",
         "NOUN",
         "ADP",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And all sorts of other oxalates are also sequestering carbon dioxide through the minerals that are being formed and taken out of the rock matrix .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "VERB",
@@ -3587,26 +3250,24 @@
         "DET",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
-        "PRON",
-        "VERB",
+        "DET",
+        "NOUN",
         "ADP",
         "ADJ",
         "NOUN",
         "AUX",
         "VERB",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
         "DET",
         "NOUN",
-        "SCONJ",
+        "PRON",
         "AUX",
         "VERB",
         "NOUN",
@@ -3615,41 +3276,35 @@
         "ADP",
         "ADP",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "This was first discovered in 1859 .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADJ",
         "VERB",
         "ADP",
         "NUM",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "DET",
+        "PRON",
         "AUX",
         "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "This is a photograph by Franz Hueber .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "DET",
@@ -3657,26 +3312,22 @@
         "ADP",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "DET",
-        "VERB",
+        "PRON",
+        "AUX",
         "DET",
         "NOUN",
         "ADP",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "This photograph 's taken 1950 s in Saudi Arabia .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "PART",
@@ -3686,11 +3337,9 @@
         "ADP",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
         "PART",
@@ -3700,14 +3349,12 @@
         "ADP",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "420 million years ago , this organism existed .",
     "tags": [
-        "<BOL>",
         "NUM",
         "NUM",
         "NOUN",
@@ -3716,11 +3363,9 @@
         "DET",
         "NOUN",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADV",
         "NUM",
         "NOUN",
@@ -3729,35 +3374,29 @@
         "DET",
         "NOUN",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "It was called Prototaxites .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Prototaxites , laying down , was about three feet tall .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "PUNCT",
         "VERB",
@@ -3768,29 +3407,25 @@
         "NUM",
         "NOUN",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PROPN",
         "PUNCT",
-        "NOUN",
-        "ADP",
+        "VERB",
+        "ADV",
         "PUNCT",
         "AUX",
         "ADV",
         "NUM",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The tallest plants on Earth at that time were less than two feet .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -3804,32 +3439,28 @@
         "ADP",
         "NUM",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
-        "NOUN",
-        "NOUN",
-        "ADP",
+        "ADJ",
         "NOUN",
         "ADP",
-        "PRON",
+        "NOUN",
+        "ADP",
+        "DET",
         "NOUN",
         "AUX",
         "ADV",
         "ADP",
         "NUM",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Across the landscapes of Earth were dotted these giant mushrooms .",
     "tags": [
-        "<BOL>",
         "ADP",
         "DET",
         "NOUN",
@@ -3840,11 +3471,9 @@
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "DET",
         "NOUN",
@@ -3853,39 +3482,33 @@
         "AUX",
         "VERB",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "All across most land masses .",
     "tags": [
-        "<BOL>",
         "PRON",
         "ADP",
         "ADV",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "ADP",
         "ADJ",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And these existed for tens of millions of years .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "VERB",
@@ -3895,13 +3518,11 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
-        "DET",
+        "PRON",
         "VERB",
         "ADP",
         "NOUN",
@@ -3909,14 +3530,12 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The Earth was struck by an asteroid , a huge amount of debris was jettisoned into the atmosphere .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "AUX",
@@ -3935,11 +3554,9 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
         "AUX",
@@ -3949,23 +3566,21 @@
         "NOUN",
         "PUNCT",
         "DET",
-        "NOUN",
-        "NOUN",
-        "ADP",
         "ADJ",
+        "NOUN",
+        "ADP",
+        "NOUN",
         "AUX",
         "VERB",
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Sunlight was cut off , and fungi inherited the Earth .",
     "tags": [
-        "<BOL>",
         "NOUN",
         "AUX",
         "VERB",
@@ -3976,11 +3591,9 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "AUX",
         "VERB",
@@ -3991,14 +3604,12 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Those organisms that paired with fungi were rewarded , because fungi do not need light .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "PRON",
@@ -4014,15 +3625,13 @@
         "PART",
         "VERB",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "ADJ",
         "NOUN",
-        "SCONJ",
-        "NOUN",
+        "PRON",
+        "VERB",
         "ADP",
         "NOUN",
         "AUX",
@@ -4034,14 +3643,12 @@
         "PART",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "So , the prospect of fungi existing on other planets elsewhere , I think , is a forgone conclusion ;",
     "tags": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "DET",
@@ -4061,18 +3668,16 @@
         "DET",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "DET",
         "NOUN",
         "ADP",
         "NOUN",
-        "ADJ",
+        "VERB",
         "ADP",
         "ADJ",
         "NOUN",
@@ -4083,41 +3688,35 @@
         "PUNCT",
         "AUX",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "at least in my own mind .",
     "tags": [
-        "<BOL>",
         "ADP",
         "ADV",
         "ADP",
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "ADP",
-        "NOUN",
+        "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The largest organism in the world is in Eastern Oregon .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -4128,11 +3727,9 @@
         "ADP",
         "PROPN",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -4141,16 +3738,14 @@
         "NOUN",
         "AUX",
         "ADP",
-        "ADJ",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PROPN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "2,200 acres in size , 2,000 years old .",
     "tags": [
-        "<BOL>",
         "NUM",
         "NOUN",
         "ADP",
@@ -4159,27 +3754,23 @@
         "NUM",
         "NOUN",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
         "PUNCT",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The largest organism on the planet is a mycelial mat , one cell wall thick .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -4195,11 +3786,9 @@
         "NOUN",
         "NOUN",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -4211,18 +3800,16 @@
         "ADJ",
         "NOUN",
         "PUNCT",
-        "NUM",
+        "PRON",
+        "VERB",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The mycelium , in the right conditions , produces a mushroom - it bursts through with such ferocity that it can break asphalt .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "PUNCT",
@@ -4246,20 +3833,18 @@
         "AUX",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
         "PUNCT",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
-        "NOUN",
+        "VERB",
         "DET",
         "NOUN",
         "PUNCT",
@@ -4267,46 +3852,40 @@
         "VERB",
         "ADP",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "SCONJ",
         "PRON",
         "AUX",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "We were involved with several experiments .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
         "ADP",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
         "ADP",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "I 'm going to show you six , if I can , solutions for helping to save the world .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
@@ -4326,16 +3905,14 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
+        "AUX",
         "VERB",
-        "NOUN",
-        "ADP",
-        "NOUN",
+        "PART",
+        "VERB",
         "PRON",
         "NUM",
         "PUNCT",
@@ -4346,18 +3923,16 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "ADP",
-        "NOUN",
+        "PART",
+        "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Battelle Laboratories and I joined up in Bellingham , Washington .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "NOUN",
         "CCONJ",
@@ -4368,29 +3943,25 @@
         "PROPN",
         "PUNCT",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PROPN",
         "NOUN",
         "CCONJ",
         "PRON",
         "VERB",
-        "ADP",
+        "ADV",
         "ADP",
         "PROPN",
         "PUNCT",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Economists at Citigroup , Mckinsey , Pricewaterhousecoopers , and elsewhere were predicting an era of broad and sustained growth from Asia to Africa .",
     "tags": [
-        "<BOL>",
         "NOUN",
         "ADP",
         "PROPN",
@@ -4414,11 +3985,9 @@
         "PROPN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "ADP",
         "PROPN",
@@ -4436,20 +4005,18 @@
         "ADP",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "PROPN",
         "PART",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Third , floating exchange rates are flawed shock absorbers .",
     "tags": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "VERB",
@@ -4459,28 +4026,24 @@
         "ADJ",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "PRON",
+        "ADV",
         "PUNCT",
-        "NOUN",
-        "NOUN",
+        "ADV",
+        "ADJ",
         "NOUN",
         "AUX",
         "VERB",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "It is naïve for emerging - market governments to expect major financial centers to adjust their policies in response to economic conditions elsewhere .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADJ",
@@ -4504,11 +4067,9 @@
         "ADJ",
         "NOUN",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
@@ -4516,14 +4077,14 @@
         "NOUN",
         "PUNCT",
         "NOUN",
-        "NOUN",
-        "ADP",
-        "NOUN",
+        "VERB",
+        "PART",
+        "VERB",
         "ADJ",
         "ADJ",
         "NOUN",
-        "ADP",
-        "NOUN",
+        "PART",
+        "VERB",
         "DET",
         "NOUN",
         "ADP",
@@ -4532,14 +4093,12 @@
         "ADJ",
         "NOUN",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "\" But the bottom line is that the ideas protected by IP rights are the dynamo of growth for developed and developing countries alike .",
     "tags": [
-        "<BOL>",
         "PUNCT",
         "CCONJ",
         "DET",
@@ -4564,20 +4123,18 @@
         "VERB",
         "NOUN",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PUNCT",
         "CCONJ",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "AUX",
         "SCONJ",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "PROPN",
@@ -4590,17 +4147,15 @@
         "ADP",
         "NOUN",
         "CCONJ",
+        "ADJ",
         "NOUN",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "It is time for India 's leaders to recognize the positive role that IP can play in fostering growth and improving citizens ' wellbeing .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "NOUN",
@@ -4625,11 +4180,9 @@
         "NOUN",
         "PART",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "NOUN",
@@ -4640,28 +4193,26 @@
         "PART",
         "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "SCONJ",
         "PROPN",
         "AUX",
         "VERB",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PART",
-        "VERB",
-        "PUNCT",
-        "<EOL>"
+        "NOUN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "Andy Haldane , one of the lieutenants Carney inherited at the BoE , has questioned the financial sector 's economic contribution , pointing to \" its ability to both invigorate and incapacitate large parts of the non - financial economy .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "PROPN",
         "PUNCT",
@@ -4702,11 +4253,9 @@
         "PUNCT",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PROPN",
         "PROPN",
         "PUNCT",
@@ -4729,8 +4278,8 @@
         "ADJ",
         "NOUN",
         "PUNCT",
-        "NOUN",
-        "ADP",
+        "VERB",
+        "PART",
         "PUNCT",
         "DET",
         "NOUN",
@@ -4738,7 +4287,7 @@
         "DET",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
@@ -4747,14 +4296,12 @@
         "PUNCT",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The reasons for this relationship are not easy to establish definitively , and the authors ' conclusions are controversial .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "ADP",
@@ -4774,11 +4321,9 @@
         "NOUN",
         "AUX",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
         "ADP",
@@ -4795,17 +4340,15 @@
         "DET",
         "NOUN",
         "PART",
-        "VERB",
+        "NOUN",
         "AUX",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "These companies find it harder to recruit skilled graduates when financial firms can pay higher salaries .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "VERB",
@@ -4822,35 +4365,31 @@
         "VERB",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PRON",
         "VERB",
         "PART",
         "VERB",
-        "NOUN",
-        "NOUN",
+        "ADV",
+        "VERB",
         "SCONJ",
         "ADJ",
         "NOUN",
         "AUX",
         "VERB",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "But if finance continues to take a disproportionate number of the best and the brightest , there could be little British manufacturing left by 2050 , and even fewer hi-tech firms than today .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "SCONJ",
         "NOUN",
@@ -4884,19 +4423,17 @@
         "NOUN",
         "ADP",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "SCONJ",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "ADP",
-        "NOUN",
+        "PART",
+        "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -4906,9 +4443,9 @@
         "NOUN",
         "PUNCT",
         "PRON",
-        "VERB",
         "AUX",
-        "ADJ",
+        "AUX",
+        "ADV",
         "ADJ",
         "NOUN",
         "NOUN",
@@ -4918,18 +4455,16 @@
         "CCONJ",
         "ADV",
         "VERB",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Physicists know that subatomic phenomena can manifest themselves as both particles and waves ;",
     "tags": [
-        "<BOL>",
         "NOUN",
         "VERB",
         "SCONJ",
@@ -4943,15 +4478,13 @@
         "NOUN",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "VERB",
         "SCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "AUX",
         "VERB",
@@ -4961,14 +4494,12 @@
         "NOUN",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "America can adopt a new growth strategy – moving away from excess consumption toward a model based on saving and investing in people , infrastructure , and capacity .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "AUX",
         "VERB",
@@ -4997,11 +4528,9 @@
         "PUNCT",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PROPN",
         "AUX",
         "VERB",
@@ -5010,17 +4539,17 @@
         "NOUN",
         "NOUN",
         "PUNCT",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
+        "VERB",
         "DET",
         "NOUN",
         "VERB",
         "ADP",
-        "VERB",
+        "NOUN",
         "CCONJ",
         "NOUN",
         "ADP",
@@ -5030,14 +4559,12 @@
         "PUNCT",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "How will resources be allocated to care for the elderly , especially in slow - growing economies where existing public pension schemes and old - age health plans are patently unsustainable ?",
     "tags": [
-        "<BOL>",
         "ADV",
         "AUX",
         "NOUN",
@@ -5069,14 +4596,12 @@
         "AUX",
         "ADV",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "PRON",
         "AUX",
-        "VERB",
+        "ADV",
         "AUX",
         "VERB",
         "PART",
@@ -5089,9 +4614,9 @@
         "ADP",
         "NOUN",
         "PUNCT",
-        "NOUN",
-        "NOUN",
-        "SCONJ",
+        "ADV",
+        "VERB",
+        "ADV",
         "ADJ",
         "NOUN",
         "NOUN",
@@ -5105,14 +4630,12 @@
         "AUX",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "A global carbon tax would mitigate climate risks while alleviating government debt burdens .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -5126,32 +4649,28 @@
         "NOUN",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "AUX",
         "VERB",
-        "NOUN",
-        "NOUN",
-        "NOUN",
-        "NOUN",
-        "NOUN",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "X",
+        "X",
+        "X",
+        "X",
+        "X",
+        "X",
+        "X",
+        "PUNCT"
     ]
 }
 {
     "sentence": "But when innovation affects an automobile 's quality , the task becomes far more difficult .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "SCONJ",
         "NOUN",
@@ -5167,15 +4686,13 @@
         "ADV",
         "ADV",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "SCONJ",
         "NOUN",
-        "NOUN",
+        "VERB",
         "DET",
         "NOUN",
         "PART",
@@ -5183,18 +4700,16 @@
         "PUNCT",
         "DET",
         "NOUN",
-        "NOUN",
-        "ADV",
-        "ADV",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "ADV",
+        "ADV",
+        "ADV",
+        "PUNCT"
     ]
 }
 {
     "sentence": "Women who have completed secondary or tertiary education are more likely to enter and remain in the labor market than their less educated counterparts .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "PRON",
         "AUX",
@@ -5219,18 +4734,16 @@
         "ADV",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "PRON",
         "AUX",
         "VERB",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "AUX",
         "ADV",
@@ -5241,21 +4754,19 @@
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
+        "ADV",
         "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Indeed , its three - year plan for economic innovation , announced in February , aims to raise the female employment rate to 62 % by 2017 , through the provision of affordable , high - quality childcare facilities and expanded paid parental leave , among other measures .",
     "tags": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "DET",
@@ -5304,11 +4815,9 @@
         "ADP",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADV",
         "PUNCT",
         "DET",
@@ -5324,16 +4833,16 @@
         "ADP",
         "PROPN",
         "PUNCT",
-        "NOUN",
-        "ADP",
-        "NOUN",
+        "VERB",
+        "PART",
+        "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
-        "NOUN",
-        "NOUN",
+        "NUM",
+        "SYM",
         "ADP",
         "NOUN",
         "PUNCT",
@@ -5349,22 +4858,20 @@
         "NOUN",
         "NOUN",
         "CCONJ",
-        "NOUN",
-        "NOUN",
-        "NOUN",
-        "NOUN",
-        "PUNCT",
-        "NOUN",
         "ADJ",
         "NOUN",
+        "NOUN",
+        "NOUN",
         "PUNCT",
-        "<EOL>"
+        "ADV",
+        "ADJ",
+        "NOUN",
+        "PUNCT"
     ]
 }
 {
     "sentence": "The IMF is founded on the premise that it represents cooperation between all of the countries of the world .",
     "tags": [
-        "<BOL>",
         "DET",
         "PROPN",
         "AUX",
@@ -5384,11 +4891,9 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "PROPN",
         "AUX",
@@ -5399,7 +4904,7 @@
         "SCONJ",
         "PRON",
         "VERB",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PRON",
         "ADP",
@@ -5408,14 +4913,12 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Next month , Ukraine 's citizens will freely choose a new President – the best rebuke possible to Russian propaganda about our supposed failure to uphold democracy .",
     "tags": [
-        "<BOL>",
         "ADJ",
         "NOUN",
         "PUNCT",
@@ -5443,13 +4946,11 @@
         "PART",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
-        "VERB",
+        "ADJ",
+        "NOUN",
         "PUNCT",
         "PROPN",
         "PART",
@@ -5464,25 +4965,23 @@
         "DET",
         "ADJ",
         "NOUN",
-        "ADJ",
-        "PART",
+        "NOUN",
+        "ADP",
         "ADJ",
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "And there are an estimated 200,000 cases of yellow fever annually , leading to 30,000 deaths worldwide .",
     "tags": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "VERB",
@@ -5500,36 +4999,32 @@
         "NUM",
         "NOUN",
         "ADV",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "CCONJ",
         "PRON",
         "AUX",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADV",
         "PUNCT",
         "NOUN",
         "ADP",
         "NUM",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Only with pragmatic , fact - based Regulation can the world realize genetic engineering 's full disease - fighting potential .",
     "tags": [
-        "<BOL>",
         "ADV",
         "ADP",
         "ADJ",
@@ -5550,12 +5045,10 @@
         "PUNCT",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "NOUN",
         "ADP",
         "NOUN",
         "PUNCT",
@@ -5566,23 +5059,21 @@
         "AUX",
         "DET",
         "NOUN",
-        "NOUN",
-        "NOUN",
+        "VERB",
+        "ADJ",
         "NOUN",
         "PART",
         "VERB",
         "NOUN",
         "PUNCT",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "He is renowned for his multifaceted characters , who are morally ambiguous .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "ADJ",
@@ -5595,31 +5086,27 @@
         "AUX",
         "ADV",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "AUX",
         "VERB",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "PRON",
         "AUX",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Balzac had difficulty adapting to the rote style of learning at the school .",
     "tags": [
-        "<BOL>",
         "PROPN",
         "VERB",
         "NOUN",
@@ -5633,51 +5120,43 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PROPN",
         "AUX",
         "VERB",
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "The narrator says :",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Near the end of his life Balzac was captivated by the idea of cutting 20,000 acres ( 81 Km2 ) of oak wood in Ukraine and transporting it for sale in France .",
     "tags": [
-        "<BOL>",
         "ADP",
         "DET",
         "NOUN",
@@ -5710,11 +5189,9 @@
         "NOUN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "DET",
         "NOUN",
@@ -5728,33 +5205,31 @@
         "DET",
         "NOUN",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "NOUN",
         "PUNCT",
-        "NOUN",
+        "NUM",
         "PROPN",
         "PUNCT",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "PROPN",
         "CCONJ",
-        "NOUN",
+        "VERB",
         "PRON",
         "ADP",
         "NOUN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "\" When the idea struck , he raced to his sister 's apartment and proclaimed :",
     "tags": [
-        "<BOL>",
         "PUNCT",
         "SCONJ",
         "DET",
@@ -5770,11 +5245,9 @@
         "NOUN",
         "CCONJ",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PUNCT",
         "SCONJ",
         "DET",
@@ -5783,21 +5256,19 @@
         "PUNCT",
         "PRON",
         "VERB",
-        "PART",
+        "ADP",
         "DET",
         "NOUN",
         "PART",
-        "VERB",
+        "NOUN",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Although Balzac was a supporter of the crown , Balzac paints the counter - revolutionaries in a sympathetic light - even though they are the center of the book 's most brutal scenes .",
     "tags": [
-        "<BOL>",
         "SCONJ",
         "PROPN",
         "AUX",
@@ -5831,12 +5302,10 @@
         "ADV",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "PROPN",
         "PROPN",
         "AUX",
         "DET",
@@ -5853,7 +5322,7 @@
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "ADV",
@@ -5867,16 +5336,14 @@
         "NOUN",
         "PART",
         "ADV",
-        "VERB",
+        "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Le Cousin Pons ( 1847 ) and La Cousine Bette ( 1848 ) tell the story of Les Parents Pauvres ( The Poor Relations ) .",
     "tags": [
-        "<BOL>",
         "X",
         "X",
         "X",
@@ -5902,11 +5369,9 @@
         "ADJ",
         "NOUN",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "X",
         "X",
         "X",
@@ -5914,32 +5379,30 @@
         "NOUN",
         "PUNCT",
         "CCONJ",
-        "NOUN",
+        "X",
         "X",
         "X",
         "PUNCT",
         "NOUN",
         "PUNCT",
-        "NOUN",
+        "VERB",
         "DET",
         "NOUN",
         "ADP",
-        "NOUN",
-        "NOUN",
+        "X",
+        "X",
         "X",
         "PUNCT",
         "DET",
         "ADJ",
         "NOUN",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Their correspondence reveals an intriguing balance of passion , propriety and patience ;",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "VERB",
@@ -5952,16 +5415,14 @@
         "NOUN",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
-        "NOUN",
+        "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
@@ -5969,14 +5430,12 @@
         "NOUN",
         "CCONJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "While he admired and drew inspiration from the Romantic style of Scottish novelist Walter Scott , Balzac sought to depict human existence through the use of particulars .",
     "tags": [
-        "<BOL>",
         "SCONJ",
         "PRON",
         "VERB",
@@ -6004,16 +5463,14 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "ADV",
+        "SCONJ",
         "PRON",
         "VERB",
         "CCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -6036,14 +5493,12 @@
         "NOUN",
         "ADP",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Some critics consider Balzac 's writing exemplary of naturalism - a more pessimistic and analytical form of realism , which seeks to explain human behavior as intrinsically linked with the environment .",
     "tags": [
-        "<BOL>",
         "DET",
         "NOUN",
         "VERB",
@@ -6075,13 +5530,11 @@
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "PRON",
-        "VERB",
+        "DET",
+        "ADJ",
         "NOUN",
         "PROPN",
         "PART",
@@ -6094,7 +5547,7 @@
         "ADJ",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "NOUN",
@@ -6106,19 +5559,17 @@
         "ADJ",
         "NOUN",
         "ADP",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "\" At the same time , the characters represent a particular range of social types :",
     "tags": [
-        "<BOL>",
         "PUNCT",
         "ADP",
         "DET",
@@ -6134,11 +5585,9 @@
         "ADP",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PUNCT",
         "ADP",
         "DET",
@@ -6149,19 +5598,17 @@
         "NOUN",
         "VERB",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "As part of the 19 th - century evolution of the novel as a \" democratic literary form \" , Balzac wrote that \" books are written for everybody \" .",
     "tags": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "ADP",
@@ -6192,11 +5639,9 @@
         "ADP",
         "NOUN",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "ADP",
@@ -6212,8 +5657,8 @@
         "ADP",
         "DET",
         "PUNCT",
-        "NOUN",
-        "NOUN",
+        "ADV",
+        "ADJ",
         "NOUN",
         "PUNCT",
         "PUNCT",
@@ -6227,14 +5672,12 @@
         "ADP",
         "NOUN",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "At the age of 18 , he married Anne Hathaway , with whom he had three children :",
     "tags": [
-        "<BOL>",
         "ADP",
         "DET",
         "NOUN",
@@ -6252,11 +5695,9 @@
         "VERB",
         "NUM",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "DET",
         "NOUN",
@@ -6274,14 +5715,12 @@
         "AUX",
         "NUM",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "\" Shakespeare was a respected poet and playwright in his own day , but his reputation did not rise to its present heights until the 19 th century .",
     "tags": [
-        "<BOL>",
         "PUNCT",
         "PROPN",
         "AUX",
@@ -6310,16 +5749,14 @@
         "NUM",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PUNCT",
         "PROPN",
         "AUX",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "CCONJ",
         "NOUN",
@@ -6334,23 +5771,21 @@
         "AUX",
         "PART",
         "VERB",
-        "PART",
+        "ADP",
         "DET",
         "ADJ",
         "NOUN",
-        "NOUN",
+        "VERB",
         "DET",
         "NUM",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "His actual date of birth remains unknown , but is traditionally observed on 23 April , Saint George 's Day .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NOUN",
@@ -6371,39 +5806,35 @@
         "PROPN",
         "PART",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
-        "NOUN",
-        "NOUN",
         "ADJ",
+        "NOUN",
+        "NOUN",
         "PUNCT",
         "CCONJ",
         "AUX",
         "VERB",
         "NOUN",
         "ADP",
-        "NOUN",
+        "NUM",
         "PROPN",
         "PUNCT",
         "PROPN",
         "PROPN",
         "PART",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In 1599 , a partnership of company members built their own theatre on the south bank of the River Thames , which they called the Globe .",
     "tags": [
-        "<BOL>",
         "ADP",
         "NUM",
         "PUNCT",
@@ -6430,11 +5861,9 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "PUNCT",
@@ -6443,13 +5872,13 @@
         "ADP",
         "NOUN",
         "NOUN",
-        "NOUN",
+        "VERB",
         "DET",
         "ADJ",
         "NOUN",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
@@ -6461,14 +5890,12 @@
         "VERB",
         "DET",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "Records of Shakespeare 's property purchases and investments indicate that the company made him a wealthy man .",
     "tags": [
-        "<BOL>",
         "NOUN",
         "ADP",
         "PROPN",
@@ -6486,11 +5913,9 @@
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "NOUN",
         "ADP",
         "PROPN",
@@ -6498,24 +5923,22 @@
         "VERB",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "SCONJ",
         "DET",
         "NOUN",
-        "NOUN",
+        "VERB",
         "PRON",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "By 1604 , he had moved north of the river again , to an area north of St Paul 's Cathedral with many fine houses .",
     "tags": [
-        "<BOL>",
         "ADP",
         "NUM",
         "PUNCT",
@@ -6541,11 +5964,9 @@
         "ADJ",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "PUNCT",
@@ -6560,8 +5981,8 @@
         "PUNCT",
         "ADP",
         "DET",
-        "NOUN",
         "ADJ",
+        "NOUN",
         "ADP",
         "PROPN",
         "PROPN",
@@ -6571,14 +5992,12 @@
         "ADJ",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "There he rented rooms from a French Huguenot named Christopher Mountjoy , a maker of ladies ' wigs and other headgear .",
     "tags": [
-        "<BOL>",
         "ADV",
         "PRON",
         "VERB",
@@ -6600,11 +6019,9 @@
         "CCONJ",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "PRON",
         "VERB",
@@ -6613,7 +6030,7 @@
         "DET",
         "ADJ",
         "NOUN",
-        "NOUN",
+        "ADP",
         "PROPN",
         "PROPN",
         "PUNCT",
@@ -6622,18 +6039,16 @@
         "ADP",
         "NOUN",
         "PART",
-        "VERB",
+        "NOUN",
         "CCONJ",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "His last three plays were collaborations , probably with John Fletcher , who succeeded him as the house playwright for the King 's Men .",
     "tags": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NUM",
@@ -6658,11 +6073,9 @@
         "NOUN",
         "PART",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "ADJ",
         "NUM",
@@ -6680,44 +6093,38 @@
         "PRON",
         "ADP",
         "DET",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "ADP",
         "DET",
         "NOUN",
         "PART",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "that is the question \" .",
     "tags": [
-        "<BOL>",
         "PRON",
         "AUX",
         "DET",
         "NOUN",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
-        "SCONJ",
-        "VERB",
+        "PRON",
+        "AUX",
         "DET",
         "NOUN",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In 1613 , Sir Henry Wotton recorded that Henry VIII \" was set forth with many extraordinary circumstances of pomp and ceremony \" .",
     "tags": [
-        "<BOL>",
         "ADP",
         "NUM",
         "PUNCT",
@@ -6741,11 +6148,9 @@
         "CCONJ",
         "NOUN",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NOUN",
         "PUNCT",
@@ -6769,14 +6174,12 @@
         "CCONJ",
         "NOUN",
         "PUNCT",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "It contained 36 texts , including 18 printed for the first time .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NUM",
@@ -6789,31 +6192,27 @@
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
-        "NOUN",
+        "ADJ",
         "NOUN",
         "PUNCT",
-        "NOUN",
+        "VERB",
         "NUM",
         "NOUN",
         "ADP",
         "DET",
         "ADJ",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "He dedicated them to Henry Wriothesley , Earl of Southampton .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "PRON",
@@ -6824,29 +6223,25 @@
         "PROPN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "PRON",
         "VERB",
         "PRON",
-        "PART",
+        "ADP",
         "PROPN",
         "PROPN",
         "PUNCT",
         "NOUN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "These include two operas by Giuseppe Verdi , Otello and Falstaff , whose critical standing compares with that of the source plays .",
     "tags": [
-        "<BOL>",
         "PRON",
         "VERB",
         "NUM",
@@ -6869,11 +6264,9 @@
         "DET",
         "NOUN",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "DET",
         "NOUN",
         "NUM",
@@ -6886,7 +6279,7 @@
         "CCONJ",
         "PROPN",
         "PUNCT",
-        "NOUN",
+        "ADV",
         "ADJ",
         "NOUN",
         "NOUN",
@@ -6894,16 +6287,14 @@
         "PRON",
         "ADP",
         "DET",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In Shakespeare 's day , English grammar , spelling and pronunciation were less standardised than they are now , and his use of language helped shape modern English .",
     "tags": [
-        "<BOL>",
         "ADP",
         "PROPN",
         "PART",
@@ -6932,11 +6323,9 @@
         "VERB",
         "ADJ",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "PROPN",
         "PART",
@@ -6960,19 +6349,17 @@
         "DET",
         "NOUN",
         "ADP",
+        "ADJ",
         "NOUN",
-        "NOUN",
-        "NOUN",
+        "VERB",
         "ADJ",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In the 1950 s , a wave of new critical approaches replaced modernism and paved the way for \" post - modern \" studies of Shakespeare .",
     "tags": [
-        "<BOL>",
         "ADP",
         "DET",
         "NUM",
@@ -6999,11 +6386,9 @@
         "NOUN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "DET",
         "NUM",
@@ -7018,7 +6403,7 @@
         "NOUN",
         "NOUN",
         "CCONJ",
-        "NOUN",
+        "VERB",
         "DET",
         "NOUN",
         "ADP",
@@ -7030,14 +6415,12 @@
         "NOUN",
         "ADP",
         "PROPN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "At 18 , he married the 26 - year - old Anne Hathaway , who was pregnant .",
     "tags": [
-        "<BOL>",
         "ADP",
         "NUM",
         "PUNCT",
@@ -7055,11 +6438,9 @@
         "PRON",
         "AUX",
         "ADJ",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "NUM",
         "PUNCT",
@@ -7077,14 +6458,12 @@
         "PRON",
         "AUX",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
 {
     "sentence": "In the late 19 th century , Edward Dowden classified four of the late comedies as romances , and though many scholars prefer to call them tragicomedies , his term is often used .",
     "tags": [
-        "<BOL>",
         "ADP",
         "DET",
         "ADJ",
@@ -7118,11 +6497,9 @@
         "AUX",
         "ADV",
         "VERB",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ],
     "prediction": [
-        "<BOL>",
         "ADP",
         "DET",
         "ADJ",
@@ -7144,9 +6521,9 @@
         "CCONJ",
         "SCONJ",
         "PRON",
+        "AUX",
         "VERB",
-        "NOUN",
-        "ADP",
+        "PART",
         "VERB",
         "PRON",
         "VERB",
@@ -7156,7 +6533,6 @@
         "AUX",
         "VERB",
         "NOUN",
-        "PUNCT",
-        "<EOL>"
+        "PUNCT"
     ]
 }
