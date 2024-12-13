@@ -14,6 +14,7 @@ def split_sentence(sentence):
     words = sentence.lower().split(' ')
     return words
 
+
 def establish_unk_words(lines, threshold=2):
     """
     This function establishes the words that will be considered as unknown
@@ -36,6 +37,7 @@ def establish_unk_words(lines, threshold=2):
             unk_words.add(word)
     print(len(unk_words))
     return unk_words
+
 
 def count_occurrences(corpus, step='dev'):
     """
@@ -123,8 +125,8 @@ def calculate_emission_probs(tag_counts: dict, tag_word_counts: dict, lang: str)
     for key, counts in tag_word_counts.items():
         tag, word = key.split(', ')  # Ex. "NOUN, oro"
         count_of_tag = tag_counts[tag]
-        prob = counts/count_of_tag  # counts(tag, word)/counts(tag)
-        emission_probs[key] = prob
+        prob = counts / count_of_tag  # counts(tag, word)/counts(tag) # np.log2(counts)-np.log2(count_of_tag)
+        emission_probs[key] = prob  # np.log2(prob)
 
     with open(f"data/{lang}_emission_mat.json", "w", encoding="utf-8") as archivo:
         json.dump(emission_probs, archivo, ensure_ascii=False, indent=4)
@@ -169,7 +171,7 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
     """
     if not Path('output').exists():
         os.mkdir('output')
-    if len(glob.glob(os.path.join(f'{input_path}/{lang}/', f'*{step}.conllu')))==0:
+    if len(glob.glob(os.path.join(f'{input_path}/{lang}/', f'*{step}.conllu'))) == 0:
         p = os.path.join(f'{input_path}/{lang}/', f'*{step}.conllu')
         print(f'{p} file not found')
         return
@@ -192,7 +194,7 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
             output_file.write(json.dumps(p, ensure_ascii=False, indent=4) + '\n')
 
 
-def predict_tags(sentence, trans_mat, emiss_mat, tags):
+def predict_tags(sentence: str, trans_mat: dict[str, float], emiss_mat: dict[str, float], tags: list[str]):
     """
     Predict the most probability tags for the sentence
     :param sentence: sentence to be predicted
@@ -207,116 +209,91 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags):
     try_tags = list(set_tags)
 
     words = split_sentence(sentence.lower())
-    words.append('<EOL>')
+    # words.append('<EOL>')
 
     result = []
-    probabilidades = [[(0, '_', -1) for _ in range(len(words))] for _ in range(len(try_tags))]
-    for i, w in enumerate(words):
+    probabilidades = [[(0.0, '_', -1) for _ in range(len(words))] for _ in range(len(try_tags))]
+    existe_palabra = False
+    # the first word
+    w = words[0]
+    for j, tag_actual in enumerate(try_tags):
+        p_acc = 1
+        if f'{tag_actual}, {w}' in emiss_mat:
+            existe_palabra = True
+            p_e = emiss_mat[f'{tag_actual}, {w}']
+            p_t = trans_mat[f'<BOL>, {tag_actual}'] if f'<BOL>, {tag_actual}' in trans_mat else 0
+            p_actual = p_acc * p_e * p_t
+            probabilidades[0][j] = (p_actual, tag_actual, -1)
+
+    if not existe_palabra:
+        for j, tag_actual in enumerate(try_tags):
+            p_acc = 1
+            if f'{tag_actual}, <UNK>' in emiss_mat:
+                p_e = emiss_mat[f'{tag_actual}, <UNK>']
+                p_t = trans_mat[f'<BOL>, {tag_actual}'] if f'<BOL>, {tag_actual}' in trans_mat else 0
+                p_actual = p_acc * p_e * p_t
+                probabilidades[0][j] = (p_actual, tag_actual, -1)
+
+    for i, w in enumerate(words[1:], start=1):
+        #print(f"word: {word}, id {i}")
         existe_palabra = False
         # iterate all the posible actual tags
         for j, tag_actual in enumerate(try_tags):
-            # the first word
-            if i == 0:
-                p_acc = 1
+            # other words
+            # we iterate the previous tags and we choose the one with the max prob
+            for t, tag_anterior in enumerate(try_tags):
                 if f'{tag_actual}, {w}' in emiss_mat:
-                    existe_palabra = True
+                    p_acc, _, _ = probabilidades[i - 1][t]
                     p_e = emiss_mat[f'{tag_actual}, {w}']
-                    p_t = trans_mat[f'<BOL>, {tag_actual}']
+                    p_t = trans_mat[
+                        f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else 0
                     p_actual = p_acc * p_e * p_t
-                    probabilidades[i][j] = (p_actual, '<BOL>', -1)
-            else:
-                #other words
-                #we iterate the previous tags and we choose the one with the max prob
-                for t, _ in enumerate(try_tags):
-                    if f'{tag_actual}, {w}' in emiss_mat:
-                        p_acc, tag_anterior, _ = probabilidades[i-1][t]
-                        p_e = emiss_mat[f'{tag_actual}, {w}']
-                        p_t = trans_mat[f'{tag_anterior}, {tag_actual}']
+                    if p_actual > probabilidades[i][j][0]:  # we save the max prob
+                        probabilidades[i][j] = (p_actual, tag_anterior, t)
+                        existe_palabra = True
+            # check if it is UNK word
+        if not existe_palabra:
+            for j, tag_actual in enumerate(try_tags):
+                for t, tag_anterior in enumerate(try_tags):
+                    if f'{tag_actual}, <UNK>' in emiss_mat:
+                        p_acc, _, _ = probabilidades[i - 1][t]
+                        p_e = emiss_mat[f'{tag_actual}, <UNK>']
+                        p_t = trans_mat[
+                            f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else 0
                         p_actual = p_acc * p_e * p_t
-                        if p_actual > probabilidades[i][j][0]: # we save the max prob
+                        print(i, j)
+                        if p_actual > probabilidades[i][j][0]:  # we save the max prob
                             probabilidades[i][j] = (p_actual, tag_anterior, t)
-                            existe_palabra = True
-                #check if it is UNK word
-                if not existe_palabra:
-                    for t, _ in enumerate(try_tags):
-                        if f'{tag_actual}, <UNK>' in emiss_mat:
-                            p_acc, tag_anterior, _ = probabilidades[i - 1][t]
-                            p_e = emiss_mat[f'{tag_actual}, <UNK>']
-                            p_t = trans_mat[f'{tag_anterior}, {tag_actual}']
-                            p_actual = p_acc * p_e * p_t
-                            if p_actual > probabilidades[i][j][0]:  # we save the max prob
-                                probabilidades[i][j] = (p_actual, tag_anterior, t)
 
-        if
     max_prob = 0
     max_prob_tag = ''
     max_id_tag = 0
     for t, tag in enumerate(try_tags):
         p_acc, tag_anterior, id_tag = probabilidades[-1][t]
-        p_t = trans_mat[f'{tag}, "<EOL>"']
+        p_t = trans_mat[f'{tag_anterior}, <EOL>'] if f'{tag_anterior}, <EOL>' in trans_mat else 0
         p_actual = p_acc * p_t
         if p_actual > max_prob:  # we save the max prob
             max_prob = p_actual
             max_prob_tag = tag
             max_id_tag = id_tag
 
-    #backtrack
+    # backtrack
     pila = []
-    for i in range(len(words)-1, 0, -1):
+    for i in range(len(words)-1, -1, -1):
         pila.append(max_prob_tag)
         _, max_prob_tag, max_id_tag = probabilidades[i][max_id_tag]
 
     print(probabilidades)
-    return pila.reverse()
+    pila.reverse()
+    return pila
 
-
-# def predict_tags(sentence, trans_mat, emiss_mat, tags):
-#     """
-#     Predict the most probability tags for the sentence
-#     :param sentence: sentence to be predicted
-#     :param trans_mat: matrix of prob of transitions
-#     :param emiss_mat: matrix of prob of emission
-#     :param tags: list of possible tags
-#     :return: POS tag sequence for the input sentence
-#     """
-#     words = split_sentence(sentence)
-#
-#     result = ['<BOL>']
-#     for w in words:
-#         max_prob = 0
-#         max_prob_tag = ''
-#
-#         # iterate all the posible tags
-#         for tag in tags:
-#             if f'{tag}, {w}' in emiss_mat: #get prob. of emission matrix (TAG, word)
-#                 prob = emiss_mat[f'{tag}, {w}']
-#                 if f'{result[-1]}, {tag}' in trans_mat: # get prob of transition matrix (TAG1, TAG2)
-#                     prob = prob * trans_mat[f'{result[-1]}, {tag}'] # mulitply both probs
-#                     if prob > max_prob: #if it is bigger than the max, apply
-#                         max_prob = prob
-#                         max_prob_tag = tag
-#
-#         #check if it is UNK word
-#         if max_prob_tag == '':
-#             for tag in tags:
-#                 if f'{tag}, <UNK>' in emiss_mat: # check with the <UNK> token
-#                     prob = emiss_mat[f'{tag}, <UNK>']
-#                     if f'{result[-1]}, {tag}' in trans_mat:
-#                         prob = prob * trans_mat[f'{result[-1]}, {tag}']
-#                         if prob > max_prob:
-#                             max_prob = prob
-#                             max_prob_tag = tag
-#
-#         result.append(max_prob_tag)
-#     result.append('<EOL>')
-#     return result
 
 def predict_examples():
     """
     Method to try de model in English and Spanish
     :return: Void
     """
-    for lang in ['English',"Spanish"]:
+    for lang in ['English', "Spanish"]:
         with open(f"data/{lang}_emission_mat.json", "r", encoding="utf-8") as archivo:
             em = json.loads(archivo.read())
         with open(f"data/{lang}_trans_mat.json", "r", encoding="utf-8") as archivo:
@@ -331,15 +308,14 @@ def predict_examples():
                 sentence = "La intérprete de No me importa nada llega mañana, a las diez de la noche, al a el Palau."
         res = predict_tags(sentence, tm, em, counts[lang]["tags"].keys())
 
-        words = split_sentence(sentence) # Separate in words the sentence
+        words = split_sentence(sentence)  # Separate in words the sentence
 
-        tags = res[1:-1]
+        tags = res
         for word, tag in zip(words, tags):
             print(f"{word:<15}{tag}")
 
 
 def main(step='dev'):
-
     # CREATE COUNTS FOR EACH LANGUAGE
     total_counts = count_occurrences(Path('UD-Data'), step)
 
@@ -348,14 +324,17 @@ def main(step='dev'):
         trans_mat = calculate_transition_probs(total_counts[lang]["tags"], total_counts[lang]["transitions"], lang)
         emission_mat = calculate_emission_probs(total_counts[lang]["tags"], total_counts[lang]["emissions"], lang)
 
-        evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang, f'{step}_', step)
-        #out of domain evaluation
-        evaluate_model(Path('UD-Data/out_of_domain'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang, "od_")
+        evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang, f'{step}_',
+                       step)
+        # out of domain evaluation
+        evaluate_model(Path('UD-Data/out_of_domain'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang,
+                       "od_")
 
 
 if __name__ == "__main__":
-    #option to train or predict examples
-    option = input("CHOOSE ONE:\n\nTrain and evaluate (e)\nTrain with dev too and run test (t)\nPredict (p)\nYour option: ")
+    # option to train or predict examples
+    option = input(
+        "CHOOSE ONE:\n\nTrain and evaluate (e)\nTrain with dev too and run test (t)\nPredict (p)\nYour option: ")
     if option == 't':
         main('test')
     elif option == 'e':
@@ -364,4 +343,3 @@ if __name__ == "__main__":
         predict_examples()
     else:
         print("Invalid option")
-
