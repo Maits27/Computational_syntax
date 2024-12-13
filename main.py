@@ -203,6 +203,8 @@ def predict_tags(sentence: str, trans_mat: dict[str, float], emiss_mat: dict[str
     :param tags: list of possible tags
     :return: POS tag sequence for the input sentence
     """
+    assert len(sentence.replace(" ", "")) > 0, "The sentence must contain at least one token"
+
     set_tags = set(tags)
     set_tags.remove("<EOL>")
     set_tags.remove("<BOL>")
