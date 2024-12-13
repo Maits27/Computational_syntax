@@ -201,38 +201,115 @@ def predict_tags(sentence, trans_mat, emiss_mat, tags):
     :param tags: list of possible tags
     :return: POS tag sequence for the input sentence
     """
-    words = split_sentence(sentence)
+    set_tags = set(tags)
+    set_tags.remove("<EOL>")
+    set_tags.remove("<BOL>")
+    try_tags = list(set_tags)
 
-    result = ['<BOL>']
-    for w in words:
-        max_prob = 0
-        max_prob_tag = ''
+    words = split_sentence(sentence.lower())
+    words.append('<EOL>')
 
-        # iterate all the posible tags
-        for tag in tags:
-            if f'{tag}, {w}' in emiss_mat: #get prob. of emission matrix (TAG, word)
-                prob = emiss_mat[f'{tag}, {w}']
-                if f'{result[-1]}, {tag}' in trans_mat: # get prob of transition matrix (TAG1, TAG2)
-                    prob = prob * trans_mat[f'{result[-1]}, {tag}'] # mulitply both probs
-                    if prob > max_prob: #if it is bigger than the max, apply
-                        max_prob = prob
-                        max_prob_tag = tag
+    result = []
+    probabilidades = [[(0, '_', -1) for _ in range(len(words))] for _ in range(len(try_tags))]
+    for i, w in enumerate(words):
+        existe_palabra = False
+        # iterate all the posible actual tags
+        for j, tag_actual in enumerate(try_tags):
+            # the first word
+            if i == 0:
+                p_acc = 1
+                if f'{tag_actual}, {w}' in emiss_mat:
+                    existe_palabra = True
+                    p_e = emiss_mat[f'{tag_actual}, {w}']
+                    p_t = trans_mat[f'<BOL>, {tag_actual}']
+                    p_actual = p_acc * p_e * p_t
+                    probabilidades[i][j] = (p_actual, '<BOL>', -1)
+            else:
+                #other words
+                #we iterate the previous tags and we choose the one with the max prob
+                for t, _ in enumerate(try_tags):
+                    if f'{tag_actual}, {w}' in emiss_mat:
+                        p_acc, tag_anterior, _ = probabilidades[i-1][t]
+                        p_e = emiss_mat[f'{tag_actual}, {w}']
+                        p_t = trans_mat[f'{tag_anterior}, {tag_actual}']
+                        p_actual = p_acc * p_e * p_t
+                        if p_actual > probabilidades[i][j][0]: # we save the max prob
+                            probabilidades[i][j] = (p_actual, tag_anterior, t)
+                            existe_palabra = True
+                #check if it is UNK word
+                if not existe_palabra:
+                    for t, _ in enumerate(try_tags):
+                        if f'{tag_actual}, <UNK>' in emiss_mat:
+                            p_acc, tag_anterior, _ = probabilidades[i - 1][t]
+                            p_e = emiss_mat[f'{tag_actual}, <UNK>']
+                            p_t = trans_mat[f'{tag_anterior}, {tag_actual}']
+                            p_actual = p_acc * p_e * p_t
+                            if p_actual > probabilidades[i][j][0]:  # we save the max prob
+                                probabilidades[i][j] = (p_actual, tag_anterior, t)
 
-        #check if it is UNK word
-        if max_prob_tag == '':
-            for tag in tags:
-                if f'{tag}, <UNK>' in emiss_mat: # check with the <UNK> token
-                    prob = emiss_mat[f'{tag}, <UNK>']
-                    if f'{result[-1]}, {tag}' in trans_mat:
-                        prob = prob * trans_mat[f'{result[-1]}, {tag}']
-                        if prob > max_prob:
-                            max_prob = prob
-                            max_prob_tag = tag
+        if
+    max_prob = 0
+    max_prob_tag = ''
+    max_id_tag = 0
+    for t, tag in enumerate(try_tags):
+        p_acc, tag_anterior, id_tag = probabilidades[-1][t]
+        p_t = trans_mat[f'{tag}, "<EOL>"']
+        p_actual = p_acc * p_t
+        if p_actual > max_prob:  # we save the max prob
+            max_prob = p_actual
+            max_prob_tag = tag
+            max_id_tag = id_tag
 
-        result.append(max_prob_tag)
-    result.append('<EOL>')
-    return result
+    #backtrack
+    pila = []
+    for i in range(len(words)-1, 0, -1):
+        pila.append(max_prob_tag)
+        _, max_prob_tag, max_id_tag = probabilidades[i][max_id_tag]
 
+    print(probabilidades)
+    return pila.reverse()
+
+
+# def predict_tags(sentence, trans_mat, emiss_mat, tags):
+#     """
+#     Predict the most probability tags for the sentence
+#     :param sentence: sentence to be predicted
+#     :param trans_mat: matrix of prob of transitions
+#     :param emiss_mat: matrix of prob of emission
+#     :param tags: list of possible tags
+#     :return: POS tag sequence for the input sentence
+#     """
+#     words = split_sentence(sentence)
+#
+#     result = ['<BOL>']
+#     for w in words:
+#         max_prob = 0
+#         max_prob_tag = ''
+#
+#         # iterate all the posible tags
+#         for tag in tags:
+#             if f'{tag}, {w}' in emiss_mat: #get prob. of emission matrix (TAG, word)
+#                 prob = emiss_mat[f'{tag}, {w}']
+#                 if f'{result[-1]}, {tag}' in trans_mat: # get prob of transition matrix (TAG1, TAG2)
+#                     prob = prob * trans_mat[f'{result[-1]}, {tag}'] # mulitply both probs
+#                     if prob > max_prob: #if it is bigger than the max, apply
+#                         max_prob = prob
+#                         max_prob_tag = tag
+#
+#         #check if it is UNK word
+#         if max_prob_tag == '':
+#             for tag in tags:
+#                 if f'{tag}, <UNK>' in emiss_mat: # check with the <UNK> token
+#                     prob = emiss_mat[f'{tag}, <UNK>']
+#                     if f'{result[-1]}, {tag}' in trans_mat:
+#                         prob = prob * trans_mat[f'{result[-1]}, {tag}']
+#                         if prob > max_prob:
+#                             max_prob = prob
+#                             max_prob_tag = tag
+#
+#         result.append(max_prob_tag)
+#     result.append('<EOL>')
+#     return result
 
 def predict_examples():
     """
