@@ -39,30 +39,31 @@ def establish_unk_words(lines, threshold=2):
     return unk_words
 
 
-def count_occurrences(corpus, step='dev'):
+def count_occurrences(corpus, steps: list[str], write=True):
     """
     This function counts the occurrences of each
         tag,
         word, tag
         tag, tag
     and saves it on a file if it doens't exist (if file already exists, it is not saved)
-    :param corpus: all the corpus
-    :param step: 'dev' if only uses train and 'test' if uses train and dev to train the model
+    :param corpus: the path where the corpus is located
+    :param steps: the documents to be used to train the model
+    :param write: if the file should be saved (or checked if it already exists)
     :return: returns a json with the counts ({tags:{...}, ...})
     """
     total_counts = {'English': {}, 'Spanish': {}}
     output_path = Path('data/counts.json')
 
-    if output_path.exists():
+    if output_path.exists() and write:
         with open(output_path, 'r', encoding='utf-8') as f:
             total_counts = json.load(f)
     else:
         if not (os.path.exists('data')):
             os.mkdir('data')
         for lang in total_counts:
-            files_to_train = glob.glob(os.path.join(f'{corpus}/{lang}/', '*train.conllu'))
-            if not step.__eq__('train'):
-                files_to_train += glob.glob(os.path.join(f'{corpus}/{lang}/', '*dev.conllu'))
+            files_to_train = []
+            for step in steps:
+                files_to_train += glob.glob(os.path.join(f'{corpus}/{lang}/', f'*{step}.conllu'))
             counts = {'transitions': {}, 'emissions': {}, 'tags': {'<BOL>': 1}}
 
             unk_words = set()
@@ -104,9 +105,9 @@ def count_occurrences(corpus, step='dev'):
                                     counts['emissions'][f'{tag}, {word}'] += 1
 
             total_counts[lang] = counts
-
-        with open(output_path, 'w', encoding='utf-8') as output_file:
-            json.dump(total_counts, output_file, ensure_ascii=False, indent=4)
+        if write:
+            with open(output_path, 'w', encoding='utf-8') as output_file:
+                json.dump(total_counts, output_file, ensure_ascii=False, indent=4)
 
     return total_counts
 
@@ -319,15 +320,16 @@ def predict_examples():
             print(f"{word:<15}{tag}")
 
 
-def main(step='dev'):
+def main(steps: list[str]):
     # CREATE COUNTS FOR EACH LANGUAGE
-    total_counts = count_occurrences(Path('UD-Data'), step)
+    total_counts = count_occurrences(Path('UD-Data'), steps)
 
     # TRAIN and Evaluate each language
     for lang in ["English", "Spanish"]:
         trans_mat = calculate_transition_probs(total_counts[lang]["tags"], total_counts[lang]["transitions"], lang)
         emission_mat = calculate_emission_probs(total_counts[lang]["tags"], total_counts[lang]["emissions"], lang)
 
+        step = 'test' if len(steps) == 2 else 'dev'
         evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang, f'{step}_',
                        step)
         # out of domain evaluation
@@ -340,9 +342,9 @@ if __name__ == "__main__":
     option = input(
         "CHOOSE ONE:\n\nTrain and evaluate (e)\nTrain with dev too and run test (t)\nPredict (p)\nYour option: ")
     if option == 't':
-        main('test')
+        main(['train'])
     elif option == 'e':
-        main()
+        main(['train', 'dev'])
     elif option == 'p':
         predict_examples()
     else:
