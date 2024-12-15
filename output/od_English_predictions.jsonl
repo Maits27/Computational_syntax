@@ -844,9 +844,9 @@
         "ADV"
     ],
     "prediction": [
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "SCONJ",
+        "PRON",
+        "NOUN"
     ]
 }
 {
@@ -1049,8 +1049,8 @@
         "ADV",
         "ADJ",
         "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADP",
+        "NOUN"
     ]
 }
 {
@@ -1700,14 +1700,14 @@
         "ADV",
         "VERB",
         "PROPN",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "VERB",
+        "PRON",
+        "AUX",
+        "VERB",
+        "PRON",
+        "AUX",
+        "PRON",
+        "NOUN"
     ]
 }
 {
@@ -1862,7 +1862,7 @@
         "ADV",
         "ADV",
         "VERB",
-        ""
+        "NOUN"
     ]
 }
 {
@@ -1962,10 +1962,10 @@
     ],
     "prediction": [
         "ADV",
-        "ADJ",
-        "NOUN",
         "VERB",
         "ADV",
+        "ADJ",
+        "NOUN",
         "VERB",
         "ADV",
         "PUNCT"
@@ -2097,10 +2097,10 @@
         "ADJ",
         "NOUN",
         "SCONJ",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "PRON",
+        "AUX",
+        "ADV",
+        "NOUN"
     ]
 }
 {
@@ -2689,8 +2689,8 @@
         "PRON",
         "AUX",
         "VERB",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADP",
+        "NOUN"
     ]
 }
 {
@@ -3340,10 +3340,10 @@
         "VERB",
         "PRON",
         "VERB",
+        "ADJ",
         "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "NUM",
+        "NOUN"
     ]
 }
 {
@@ -3472,9 +3472,9 @@
         "PRON",
         "ADV",
         "VERB",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "NOUN",
+        "ADP",
+        "NOUN"
     ]
 }
 {
@@ -3708,10 +3708,10 @@
         "PRON",
         "AUX",
         "VERB",
+        "ADJ",
         "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADP",
+        "NOUN"
     ]
 }
 {
@@ -5106,8 +5106,8 @@
         "NOUN",
         "CCONJ",
         "NOUN",
-        "ADP",
-        ""
+        "VERB",
+        "NOUN"
     ]
 }
 {
@@ -6413,10 +6413,10 @@
         "PRON",
         "AUX",
         "VERB",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "PUNCT",
+        "PRON",
+        "AUX",
+        "NOUN"
     ]
 }
 {
@@ -6789,10 +6789,10 @@
         "NOUN",
         "CCONJ",
         "DET",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "NOUN",
+        "PRON",
+        "PRON",
+        "NOUN"
     ]
 }
 {
@@ -7142,8 +7142,8 @@
         "PRON",
         "AUX",
         "DET",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "NOUN",
+        "NOUN"
     ]
 }
 {
@@ -7481,10 +7481,10 @@
         "VERB",
         "NOUN",
         "PUNCT",
-        "PRON",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "DET",
+        "NOUN",
+        "AUX",
+        "NOUN"
     ]
 }
 {
@@ -8045,7 +8045,7 @@
         "ADV",
         "VERB",
         "ADV",
-        ""
+        "NOUN"
     ]
 }
 {
@@ -8061,8 +8061,8 @@
         "SCONJ",
         "PRON",
         "PRON",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "VERB",
+        "NOUN"
     ]
 }
 {
@@ -9172,9 +9172,9 @@
         "ADV",
         "ADJ",
         "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "VERB",
+        "DET",
+        "NOUN"
     ]
 }
 {
@@ -9207,7 +9207,7 @@
         "TAG_INVENTADO_PRUEBA",
         "TAG_INVENTADO_PRUEBA",
         "TAG_INVENTADO_PRUEBA",
-        ""
+        "NOUN"
     ]
 }
 {
@@ -9860,12 +9860,12 @@
         "VERB",
         "ADV",
         "VERB",
-        "SCONJ",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "PRON",
+        "VERB",
+        "PRON",
+        "X",
+        "ADV",
+        "NOUN"
     ]
 }
 {
@@ -10360,8 +10360,8 @@
         "ADV",
         "ADJ",
         "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "VERB",
+        "NOUN"
     ]
 }
 {
@@ -13032,9 +13032,9 @@
         "NOUN",
         "ADP",
         "ADP",
+        "ADJ",
         "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "NOUN"
     ]
 }
 {
@@ -13925,8 +13925,8 @@
         "DET",
         "NOUN",
         "ADP",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "NOUN",
+        "NOUN"
     ]
 }
 {
@@ -17038,10 +17038,10 @@
         "VERB",
         "PART",
         "VERB",
-        "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADP",
+        "NUM",
+        "SYM",
+        "NOUN"
     ]
 }
 {
@@ -17056,8 +17056,8 @@
     ],
     "prediction": [
         "ADV",
-        "ADV",
         "VERB",
+        "ADV",
         "ADV",
         "ADV",
         "PUNCT"
@@ -17616,9 +17616,9 @@
         "NOUN",
         "NOUN",
         "CCONJ",
-        "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "VERB",
+        "ADV",
+        "NOUN"
     ]
 }
 {
@@ -18435,9 +18435,9 @@
         "PROPN"
     ],
     "prediction": [
-        "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADV",
+        "VERB",
+        "NOUN"
     ]
 }
 {
@@ -18959,8 +18959,8 @@
         "NOUN",
         "AUX",
         "ADV",
-        "ADV",
         "VERB",
+        "ADV",
         "ADV",
         "PUNCT"
     ]
@@ -20095,10 +20095,10 @@
         "NOUN",
         "CCONJ",
         "PRON",
+        "AUX",
         "VERB",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADP",
+        "NOUN"
     ]
 }
 {
@@ -20690,11 +20690,11 @@
         "PRON",
         "AUX",
         "VERB",
+        "ADJ",
         "NOUN",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "AUX",
+        "ADV",
+        "NOUN"
     ]
 }
 {
@@ -21013,8 +21013,8 @@
         "NOUN",
         "VERB",
         "PRON",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "AUX",
+        "NOUN"
     ]
 }
 {
@@ -21346,8 +21346,8 @@
     ],
     "prediction": [
         "ADV",
-        "ADV",
         "VERB",
+        "ADV",
         "ADV",
         "VERB",
         "ADP",
@@ -22281,9 +22281,9 @@
         "NOUN",
         "PUNCT",
         "PRON",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "VERB",
+        "PRON",
+        "NOUN"
     ]
 }
 {
@@ -22864,8 +22864,8 @@
         "PRON",
         "AUX",
         "VERB",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADV",
+        "NOUN"
     ]
 }
 {
@@ -23713,10 +23713,10 @@
         "PRON"
     ],
     "prediction": [
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "PRON",
+        "AUX",
+        "SCONJ",
+        "NOUN"
     ]
 }
 {
@@ -24090,8 +24090,8 @@
         "PRON",
         "VERB",
         "SCONJ",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "DET",
+        "NOUN"
     ]
 }
 {
@@ -24690,17 +24690,17 @@
         "NOUN",
         "AUX",
         "VERB",
-        "ADV",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADP",
+        "NOUN",
+        "ADP",
+        "ADJ",
+        "NOUN",
+        "PRON",
+        "CCONJ",
+        "PRON",
+        "VERB",
+        "NOUN",
+        "NOUN"
     ]
 }
 {
@@ -25195,8 +25195,8 @@
         "VERB"
     ],
     "prediction": [
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "ADV",
+        "NOUN"
     ]
 }
 {
@@ -26112,8 +26112,8 @@
         "PRON",
         "VERB",
         "PART",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "VERB",
+        "NOUN"
     ]
 }
 {
@@ -26208,11 +26208,11 @@
         "CCONJ",
         "PRON",
         "PART",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "VERB",
+        "PRON",
+        "ADP",
+        "PRON",
+        "NOUN"
     ]
 }
 {
@@ -27351,9 +27351,9 @@
         "AUX",
         "AUX",
         "VERB",
-        "PRON",
-        "TAG_INVENTADO_PRUEBA",
-        ""
+        "DET",
+        "ADJ",
+        "NOUN"
     ]
 }
 {
