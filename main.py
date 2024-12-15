@@ -245,7 +245,7 @@ def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str
         if f'{tag_actual}, {w}' in emiss_mat:
             existe_palabra = True
             p_e = emiss_mat[f'{tag_actual}, {w}']
-            p_t = trans_mat[f'<BOL>, {tag_actual}'] if f'<BOL>, {tag_actual}' in trans_mat else 0
+            p_t = trans_mat[f'<BOL>, {tag_actual}'] if f'<BOL>, {tag_actual}' in trans_mat else float('-inf')
             p_actual = p_acc + p_e + p_t
             probabilidades[0][j] = (p_actual, tag_actual, -1)
 
@@ -254,7 +254,7 @@ def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str
             p_acc = 0
             if f'{tag_actual}, <UNK>' in emiss_mat:
                 p_e = emiss_mat[f'{tag_actual}, <UNK>']
-                p_t = trans_mat[f'<BOL>, {tag_actual}'] if f'<BOL>, {tag_actual}' in trans_mat else 0
+                p_t = trans_mat[f'<BOL>, {tag_actual}'] if f'<BOL>, {tag_actual}' in trans_mat else float('-inf')
                 p_actual = p_acc + p_e + p_t
                 probabilidades[0][j] = (p_actual, tag_actual, -1)
 
@@ -270,7 +270,7 @@ def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str
                     p_acc, _, _ = probabilidades[i - 1][t]
                     p_e = emiss_mat[f'{tag_actual}, {w}']
                     p_t = trans_mat[
-                        f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else 0
+                        f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else float('-inf')
                     p_actual = p_acc + p_e + p_t
                     if p_actual > probabilidades[i][j][0]:  # we save the max prob
                         probabilidades[i][j] = (p_actual, tag_anterior, t)
@@ -283,7 +283,7 @@ def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str
                         p_acc, _, _ = probabilidades[i - 1][t]
                         p_e = emiss_mat[f'{tag_actual}, <UNK>']
                         p_t = trans_mat[
-                            f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else 0
+                            f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else float('-inf')
                         p_actual = p_acc + p_e + p_t
                         # print(i, j)
                         if p_actual > probabilidades[i][j][0]:  # we save the max prob
@@ -294,7 +294,7 @@ def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str
     id_anterior = 0
     for t, tag in enumerate(try_tags):
         p_acc, tag_anterior, id_tag = probabilidades[-1][t]
-        p_t = trans_mat[f'{tag}, <EOL>'] if f'{tag}, <EOL>' in trans_mat else 0
+        p_t = trans_mat[f'{tag}, <EOL>'] if f'{tag}, <EOL>' in trans_mat else float('-inf')
         p_actual = p_acc + p_t
         if p_actual > max_prob:  # we save the max prob
             max_prob = p_actual
