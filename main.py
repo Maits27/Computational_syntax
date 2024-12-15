@@ -18,11 +18,12 @@ def split_sentence(sentence):
     return words
 
 
-def establish_unk_words(lines, threshold=2):
+def establish_unk_words(lines, threshold=2, lemmatize=False):
     """
     This function establishes the words that will be considered as unknown
     :param lines: all the lines of the corpus
     :param threshold: threshold to consider a word as unknown
+    :param lemmatize: to train with word lemmatization or not (True/False)
     :return: a list with the words that will be considered as unknown
     """
     words = {}
@@ -31,6 +32,8 @@ def establish_unk_words(lines, threshold=2):
         if line == '\n' or line[0] == '#':
             continue
         w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
+        if lemmatize:
+            word = lemma.lower()
         if not re.fullmatch(r"-?\d+", w_id):
             #print(f'UNK_Ignoring line: {line}')
             continue
@@ -45,7 +48,7 @@ def establish_unk_words(lines, threshold=2):
     return unk_words
 
 
-def count_occurrences(corpus, steps: List[str], write=True):
+def count_occurrences(corpus, steps: List[str], write=True, lemmatize=False):
     """
     This function counts the occurrences of each
         tag,
@@ -96,7 +99,10 @@ def count_occurrences(corpus, steps: List[str], write=True):
                                 continue
                             else:
                                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
-                                word = word.lower()
+                                if lemmatize:
+                                    word = lemma.lower()
+                                else:
+                                    word = word.lower()
                                 if word in unk_words:
                                     word = '<UNK>'
 
@@ -173,7 +179,7 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict, lang: str
     return trans_mat
 
 
-def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', info="", step='dev'):
+def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', info="", step='dev', lemmatize=False):
     """
     Evaluate the model with the test data
     :param input_path: input path of the test data
@@ -203,6 +209,8 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
                     sentence, tags = '', []
             else:
                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
+                if lemmatize:
+                    word = lemma.lower()
                 if not re.fullmatch(r"-?\d+", w_id):
                     #print(f'EVAl- ignoring line: {line}')
                     pass
