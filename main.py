@@ -78,7 +78,7 @@ def count_occurrences(corpus, steps: List[str], write=True, lemmatize=False):
             unk_words = set()
             for file in files_to_train:
                 with open(file, 'r', encoding='utf-8') as f:
-                    unk_words = unk_words.union(establish_unk_words(f.readlines()))
+                    unk_words = unk_words.union(establish_unk_words(f.readlines(), lemmatize=lemmatize))
 
             for file in files_to_train:
                 with open(file, 'r', encoding='utf-8') as f:
@@ -357,8 +357,11 @@ def predict_examples():
 
 
 def main(steps: List[str]):
+    #to lemmatize or not
+    lemmatize = False
+
     # CREATE COUNTS FOR EACH LANGUAGE
-    total_counts = count_occurrences(Path('UD-Data'), steps)
+    total_counts = count_occurrences(Path('UD-Data'), steps, lemmatize=lemmatize)
 
     # TRAIN and Evaluate each language
     for lang in ["English", "Spanish"]:
@@ -367,10 +370,10 @@ def main(steps: List[str]):
 
         step = 'test' if len(steps) == 2 else 'dev'
         evaluate_model(Path('UD-Data'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang, f'{step}_',
-                       step)
+                       step, lemmatize=lemmatize)
         # out of domain evaluation
         evaluate_model(Path('UD-Data/out_of_domain'), trans_mat, emission_mat, total_counts[lang]["tags"].keys(), lang,
-                       "od_")
+                       "od_", lemmatize=lemmatize)
 
 
 if __name__ == "__main__":
