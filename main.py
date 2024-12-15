@@ -2,6 +2,7 @@ import json, glob, os, re
 from pathlib import Path
 
 from typing import List, Dict
+import numpy as np
 
 
 def split_sentence(sentence):
@@ -141,7 +142,7 @@ def calculate_emission_probs(tag_counts: dict, tag_word_counts: dict, lang: str)
         tag, word = key.split(', ')  # Ex. "NOUN, oro"
         count_of_tag = tag_counts[tag]
         prob = counts / count_of_tag  # counts(tag, word)/counts(tag) # np.log2(counts)-np.log2(count_of_tag)
-        emission_probs[key] = prob  # np.log2(prob)
+        emission_probs[key] = np.log2(prob)  # np.log2(prob)
 
     with open(f"data/{lang}_emission_mat.json", "w", encoding="utf-8") as archivo:
         json.dump(emission_probs, archivo, ensure_ascii=False, indent=4)
@@ -165,7 +166,7 @@ def calculate_transition_probs(tag_counts: dict, tag_tag_counts: dict, lang: str
         prev_tag_count = tag_counts.get(f"{prev_tag}")
 
         prob = counts / prev_tag_count
-        trans_mat[tag1_tag2] = prob
+        trans_mat[tag1_tag2] = np.log2(prob)
 
     with open(f"data/{lang}_trans_mat.json", "w", encoding="utf-8") as archivo:
         json.dump(trans_mat, archivo, ensure_ascii=False, indent=4)
@@ -235,26 +236,26 @@ def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str
     # words.append('<EOL>')
 
     result = []
-    probabilidades = [[(0.0, 'TAG_INVENTADO_PRUEBA', -1) for _ in range(len(try_tags))] for _ in range(len(words))]
+    probabilidades = [[( float('-inf'), 'TAG_INVENTADO_PRUEBA', -1) for _ in range(len(try_tags))] for _ in range(len(words))]
     existe_palabra = False
     # the first word
     w = words[0]
     for j, tag_actual in enumerate(try_tags):
-        p_acc = 1
+        p_acc = 0
         if f'{tag_actual}, {w}' in emiss_mat:
             existe_palabra = True
             p_e = emiss_mat[f'{tag_actual}, {w}']
             p_t = trans_mat[f'<BOL>, {tag_actual}'] if f'<BOL>, {tag_actual}' in trans_mat else 0
-            p_actual = p_acc * p_e * p_t
+            p_actual = p_acc + p_e + p_t
             probabilidades[0][j] = (p_actual, tag_actual, -1)
 
     if not existe_palabra:
         for j, tag_actual in enumerate(try_tags):
-            p_acc = 1
+            p_acc = 0
             if f'{tag_actual}, <UNK>' in emiss_mat:
                 p_e = emiss_mat[f'{tag_actual}, <UNK>']
                 p_t = trans_mat[f'<BOL>, {tag_actual}'] if f'<BOL>, {tag_actual}' in trans_mat else 0
-                p_actual = p_acc * p_e * p_t
+                p_actual = p_acc + p_e + p_t
                 probabilidades[0][j] = (p_actual, tag_actual, -1)
 
     for i, w in enumerate(words[1:], start=1):
@@ -270,7 +271,7 @@ def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str
                     p_e = emiss_mat[f'{tag_actual}, {w}']
                     p_t = trans_mat[
                         f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else 0
-                    p_actual = p_acc * p_e * p_t
+                    p_actual = p_acc + p_e + p_t
                     if p_actual > probabilidades[i][j][0]:  # we save the max prob
                         probabilidades[i][j] = (p_actual, tag_anterior, t)
                         existe_palabra = True
@@ -283,22 +284,30 @@ def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str
                         p_e = emiss_mat[f'{tag_actual}, <UNK>']
                         p_t = trans_mat[
                             f'{tag_anterior}, {tag_actual}'] if f'{tag_anterior}, {tag_actual}' in trans_mat else 0
-                        p_actual = p_acc * p_e * p_t
+                        p_actual = p_acc + p_e + p_t
                         # print(i, j)
                         if p_actual > probabilidades[i][j][0]:  # we save the max prob
                             probabilidades[i][j] = (p_actual, tag_anterior, t)
 
-    max_prob = 0
+    max_prob =  float('-inf')
     max_prob_tag = ''
     id_anterior = 0
     for t, tag in enumerate(try_tags):
         p_acc, tag_anterior, id_tag = probabilidades[-1][t]
         p_t = trans_mat[f'{tag}, <EOL>'] if f'{tag}, <EOL>' in trans_mat else 0
-        p_actual = p_acc * p_t
+        p_actual = p_acc + p_t
         if p_actual > max_prob:  # we save the max prob
             max_prob = p_actual
             max_prob_tag = tag
             id_anterior = t
+
+    if max_prob_tag == '':
+        max_prob_tag = 'NOUN'
+        for i, value in enumerate(probabilidades[-1]):
+            prob, tag, idx = value
+            if prob > max_prob:
+                max_prob = prob
+                id_anterior = i
 
     # backtrack
     pila = []
@@ -360,9 +369,9 @@ if __name__ == "__main__":
     # option to train or predict examples
     option = input(
         "CHOOSE ONE:\n\nTrain and evaluate (e)\nTrain with dev too and run test (t)\nPredict (p)\nYour option: ")
-    if option == 't':
+    if option == 'e':
         main(['train'])
-    elif option == 'e':
+    elif option == 't':
         main(['train', 'dev'])
     elif option == 'p':
         predict_examples()
