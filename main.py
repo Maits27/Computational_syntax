@@ -1,6 +1,8 @@
 import json, glob, os, re
 from pathlib import Path
 
+from typing import List, Dict
+
 
 def split_sentence(sentence):
     """
@@ -39,7 +41,7 @@ def establish_unk_words(lines, threshold=2):
     return unk_words
 
 
-def count_occurrences(corpus, steps: list[str], write=True):
+def count_occurrences(corpus, steps: List[str], write=True):
     """
     This function counts the occurrences of each
         tag,
@@ -195,7 +197,7 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
             output_file.write(json.dumps(p, ensure_ascii=False, indent=4) + '\n')
 
 
-def predict_tags(sentence: str, trans_mat: dict[str, float], emiss_mat: dict[str, float], tags: list[str]):
+def predict_tags(sentence: str, trans_mat: Dict[str, float], emiss_mat: Dict[str, float], tags: List[str]):
     """
     Predict the most probability tags for the sentence
     :param sentence: sentence to be predicted
@@ -320,7 +322,7 @@ def predict_examples():
             print(f"{word:<15}{tag}")
 
 
-def main(steps: list[str]):
+def main(steps: List[str]):
     # CREATE COUNTS FOR EACH LANGUAGE
     total_counts = count_occurrences(Path('UD-Data'), steps)
 
