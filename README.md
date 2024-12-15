@@ -30,6 +30,8 @@ The core of the model follows the HMM structure discussed in class, which includ
 * Emission Probabilities: Probability of a word being emitted given a specific tag.
 * Viterbi Algorithm: Used to determine the most likely sequence of tags for a given sequence of words.
 
+**IMPORTANT:** All the probabilities are in logarithmic scale to avoid underflow issues.
+
 ### In-Domain Experiments
 
 The model will be evaluated on the two datasets from the Universal Dependencies (UD) project. 
