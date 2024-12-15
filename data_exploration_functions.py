@@ -172,7 +172,7 @@ def plot_subsets_comparison(data, title):
     if '<BOL>' in tags: tags.remove('<BOL>')
     if '<EOL>' in tags: tags.remove('<EOL>')
 
-    counts = {subset: [data[subset][tag] for tag in tags] for subset in subsets}
+    counts = {subset: [data[subset].get(tag, 0) for tag in tags] for subset in subsets}
 
     x = np.arange(len(tags))  # Posiciones en el eje x
     width = 0.8 / len(subsets)  # Ancho dinámico de las barras según el número de subconjuntos
@@ -183,6 +183,7 @@ def plot_subsets_comparison(data, title):
     for i, subset in enumerate(subsets):
         plt.bar(x + (i - len(subsets) / 2) * width, counts[subset], width, label=subset.capitalize(), color=colors[i % len(colors)])
 
+    plt.yscale('log')
     plt.xlabel('Tags')
     plt.ylabel('Count')
     plt.xticks(x, tags, rotation=45, ha='right')
