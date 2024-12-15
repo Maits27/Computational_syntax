@@ -30,6 +30,9 @@ def establish_unk_words(lines, threshold=2):
         if line == '\n' or line[0] == '#':
             continue
         w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
+        if not re.fullmatch(r"-?\d+", w_id):
+            #print(f'UNK_Ignoring line: {line}')
+            continue
         if word not in words:
             words[word] = 1
         else:
@@ -77,34 +80,43 @@ def count_occurrences(corpus, steps: List[str], write=True):
                 with open(file, 'r', encoding='utf-8') as f:
                     tag = '<BOL>'
                     for line in f:
+                        ignore_line = False
                         prev_tag, word = tag, ''
                         if line == '\n':
                             tag = '<EOL>'
                         elif line[0] == '#':
                             tag = '<BOL>'
                         else:
-                            w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
-                            word = word.lower()
-                            if word in unk_words:
-                                word = '<UNK>'
+                            wordL = line.split('\t')
+                            if not re.fullmatch(r"-?\d+", wordL[0]):
 
-                        if not (tag == '<BOL>' and prev_tag == '<BOL>'):
-                            if tag not in counts['tags']:
-                                counts['tags'][tag] = 1
+                                #print(f'COUNT_Ignoring line: {line}')
+                                ignore_line = True
+                                continue
                             else:
-                                counts['tags'][tag] += 1
+                                w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
+                                word = word.lower()
+                                if word in unk_words:
+                                    word = '<UNK>'
 
-                            if not (tag == '<BOL>' and prev_tag == '<EOL>'):
-                                if f'{prev_tag}, {tag}' not in counts['transitions']:
-                                    counts['transitions'][f'{prev_tag}, {tag}'] = 1
+                        if not ignore_line:
+                            if not (tag == '<BOL>' and prev_tag == '<BOL>'):
+                                if tag not in counts['tags']:
+                                    counts['tags'][tag] = 1
                                 else:
-                                    counts['transitions'][f'{prev_tag}, {tag}'] += 1
+                                    counts['tags'][tag] += 1
 
-                            if word != '':
-                                if f'{tag}, {word}' not in counts['emissions']:
-                                    counts['emissions'][f'{tag}, {word}'] = 1
-                                else:
-                                    counts['emissions'][f'{tag}, {word}'] += 1
+                                if not (tag == '<BOL>' and prev_tag == '<EOL>'):
+                                    if f'{prev_tag}, {tag}' not in counts['transitions']:
+                                        counts['transitions'][f'{prev_tag}, {tag}'] = 1
+                                    else:
+                                        counts['transitions'][f'{prev_tag}, {tag}'] += 1
+
+                                if word != '':
+                                    if f'{tag}, {word}' not in counts['emissions']:
+                                        counts['emissions'][f'{tag}, {word}'] = 1
+                                    else:
+                                        counts['emissions'][f'{tag}, {word}'] += 1
 
             total_counts[lang] = counts
         if write:
@@ -190,8 +202,13 @@ def evaluate_model(input_path, trans_mat, emiss_mat, all_tags, lang='English', i
                     sentence, tags = '', []
             else:
                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
-                sentence += f'{word} '
-                tags.append(tag)
+                if not re.fullmatch(r"-?\d+", w_id):
+                    #print(f'EVAl- ignoring line: {line}')
+                    pass
+                else:
+                    sentence += f'{word} '
+                    tags.append(tag)
+
     with open(f'output/{info}{lang}_predictions.jsonl', 'w', encoding='utf-8') as output_file:
         for p in predictions:
             output_file.write(json.dumps(p, ensure_ascii=False, indent=4) + '\n')
