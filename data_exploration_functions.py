@@ -5,10 +5,11 @@ from matplotlib import pyplot as plt
 from wordcloud import WordCloud
 
 
-def get_tags_predictions(ruta_archivo: str):
+def get_tags_predictions(ruta_archivo: str, tags_to_check=["ADJ", "NOUN", "VERB"]):
     """
     Get the tags and predictions of a dataset given a path of the predictions file
     :param ruta_archivo: path to a predictions file
+    :param tags_to_check: tags to be checked for errors (by default ADJ, NOUN, VERB, the most common tags)
     :return: all_tags: array with all tags
     :return: all_predictions: array with all predictions
     :return: errors: dictionary with the errors found
@@ -32,7 +33,7 @@ def get_tags_predictions(ruta_archivo: str):
             correct_tag = correct_tags[i]
             predicted_tag = predicted_tags[i]
             if correct_tag != predicted_tag:
-                if predicted_tag in ["ADJ", "NOUN", "VERB"]:
+                if predicted_tag in tags_to_check:
                     # we check what is the wrong tagged word
                     word = elemento.get("sentence", "").split()[i]
                     if f"{correct_tag},{predicted_tag}" not in errors:
@@ -61,7 +62,7 @@ def conllu_dict(file_path, i=0):
                 info[i] = {"tags": tags, "sentence": sentence}
                 i+=1
                 tags, sentence = [], []
-            elif line[0] == '#': pass
+            elif line[0] == '#' or line == '\n': pass
             else:
                 w_id, word, lemma, tag, _, _, _, tag2, _, _ = line.split('\t')
                 sentence.append(word.lower())
@@ -143,7 +144,7 @@ def transition_matrix(transitions):
     matrix, labels = get_transition_matrix_and_labels(transitions)
 
     plt.figure(figsize=(8, 6))
-    cax = plt.imshow(matrix, cmap="viridis", interpolation="nearest")
+    cax = plt.imshow(matrix, cmap="gist_earth", interpolation="nearest")
     plt.colorbar(cax, label="Count")
     plt.xticks(ticks=np.arange(len(labels)), labels=labels, rotation=90)
     plt.yticks(ticks=np.arange(len(labels)), labels=labels)
@@ -193,6 +194,7 @@ def plot_subsets_comparison(data, title):
     plt.show()
 
 
+
 def wordclouds_by_tag(info):
     """
     Plot wordclouds by tag
@@ -200,11 +202,11 @@ def wordclouds_by_tag(info):
     :return:
     """
     num_por_linea = 4
-    plt.figure(figsize=(15, 10), facecolor='none')
+    plt.figure(figsize=(15, 10), facecolor='white')
 
     for i, (categoria, palabras) in enumerate(info.items()):
         text = ' '.join(palabras)
-        wordcloud = WordCloud(width=400, height=400, background_color=None, regexp=r'\S+').generate(text)
+        wordcloud = WordCloud(width=400, height=400, background_color='black', regexp=r'\S+').generate(text)
 
         plt.subplot(len(info) // num_por_linea + 1, num_por_linea, i + 1)
         plt.imshow(wordcloud, interpolation='bilinear')
@@ -214,23 +216,24 @@ def wordclouds_by_tag(info):
     plt.show()
 
 
-def wordcloud_of_words_or_sentences(sentences, title="Sentence wordcloud"):
+def wordcloud_of_words_or_sentences(sentences, title="Sentence wordcloud", min_words=1):
     """
     Plot a wordcloud of words or sentences
     :param sentences:  array of strings or array of arrays with words
     :param title:  title of the plot
+    :param min_words: minimum length of the words to appear in the wordcloud
     :return:
     """
     joined_sentences = ' '
-    if all(isinstance(words, list) for words in
-           sentences):  # If it is an array of arrays with words [['I', 'am', 'a', 'sentence'], ['I', 'am', 'another', 'sentence']]
+    if all(isinstance(words, list) for words in sentences):
+        # If it is an array of arrays with words [['I', 'am', 'a', 'sentence'], ['I', 'am', 'another', 'sentence']]
         sent_flat = [palabra for sublista in sentences for palabra in sublista]
         joined_sentences = ' '.join(sent_flat)
-    elif all(isinstance(sentence, str) for sentence in
-             sentences):  # If it is an array of strings ['I am a sentence', 'I am another sentence']
+    elif all(isinstance(sentence, str) for sentence in sentences):
+        # If it is an array of strings ['I am a sentence', 'I am another sentence']
         joined_sentences = ' '.join(sentences)
 
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(joined_sentences)
+    wordcloud = WordCloud(width=800, height=400, background_color='black', min_word_length=min_words).generate(joined_sentences)
     plt.figure()
     plt.title(title)
     plt.imshow(wordcloud, interpolation="bilinear")
@@ -238,7 +241,7 @@ def wordcloud_of_words_or_sentences(sentences, title="Sentence wordcloud"):
     plt.show()
 
 
-def plot_pos_with_unknown(data,title,lang='English'):
+def plot_pos_with_unknown(data, title, lang='English'):
     """
     Genera un gráfico de barras horizontales con la frecuencia de POS tags que contienen "<UNK>".
     :param data:  Diccionario con los counts.
