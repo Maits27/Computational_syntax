@@ -1,4 +1,7 @@
 # Computational Syntax - HMM PoS Tagger
+
+This project is made by: Adrian Cuadrón, Aimar Sagasti and Maitane Urruela
+
 ## Overview
 This project involves implementing a Hidden Markov Model (HMM) for Part-of-Speech (PoS) tagging, following the model discussed in the subject of Computational Syntax. This project will involve the development of two HMMs, one for each language: English and Spanish. These models will be trained using datasets from [Universal Dependencies](https://universaldependencies.org/), with a focus on formal contexts such as legal texts, news articles, Wikipedia, and other similar domains. 
 
