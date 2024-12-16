@@ -14,7 +14,7 @@ The performance of both models will be evaluated in an **in-domain** context, en
 For the in-domain part, the following datasets have been used:
 
 * English: [UD_English-ParTUT](https://github.com/UniversalDependencies/UD_English-ParTUT/tree/master), a conversion of a multilingual parallel treebank developed at the University of Turin, and consisting of a variety of text genres, including talks, legal texts and Wikipedia articles, among others. It contains 2.090 sentences, with a total of 49.648 words, divided in train, dev and test.
-* Spanish: [AnCora](https://github.com/UniversalDependencies/UD_Spanish-AnCora/blob/master/), a conversion of the AnCora corpus to Universal Dependencies guidelines consisting only on news-domain corpora. However, the amount of data is quite bigger in comparison to the English corpora, having more than 568K words
+* Spanish: [AnCora](https://github.com/UniversalDependencies/UD_Spanish-AnCora/blob/master/), a conversion of the AnCora corpus to Universal Dependencies guidelines consisting only on news-domain corpora. However, the amount of data is quite bigger in comparison to the English corpora, having more than 568K words.
 
 ### Out-of-Domain Datasets:
 
