@@ -30,7 +30,7 @@ The core of the model follows the HMM structure discussed in class, which includ
 * Emission Probabilities: Probability of a word being emitted given a specific tag.
 * Viterbi Algorithm: Used to determine the most likely sequence of tags for a given sequence of words.
 
-**IMPORTANT:** All the probabilities are in logarithmic scale to avoid underflow issues.
+**IMPORTANT:** All the code related to the implementation of the HMM is located in the *main.py* file in the root directory of this project. All the probabilities are in logarithmic scale to avoid underflow issues.
 
 ### In-Domain Experiments
 
@@ -40,9 +40,12 @@ The model will be evaluated on the two datasets from the Universal Dependencies 
 * Testing: The model will be tested on the test file of the dataset, making use of the rest of the data to train the model.
 * Evaluation Metrics: The accuracy of the model will be reported, with a detailed error analysis provided. This will include an examination of the types of errors made.
 
+**IMPORTANT:** All the error analysis of the in-domain part is located in the Jupiter Notebook *resultAnalysis.ipynb* in the root directory of this project.
+
 ### Out-of-Domain Results
 
 After the in-domain experiments, the model will be tested on out-of-domain data from Twitter. 
 * Evaluation: The evaluation will be made using the fully trained HMM for each language.
 * Domain Shift Analysis: It will be analyzed how robust the model is to domain shift. 
 
+**IMPORTANT:** All the error analysis of the out-of-domain part is located in the Jupiter Notebook *OD_resultAnalysis.ipynb* in the root directory of this project.
